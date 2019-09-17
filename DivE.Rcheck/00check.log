@@ -1,0 +1,165 @@
+* using log directory 'C:/Users/dlaydon/Dropbox (SPH Imperial College)/Immunology/DivE_Package2019/DivE.Rcheck'
+* using R version 3.6.1 (2019-07-05)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* using option '--as-cran'
+* checking for file 'DivE/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'DivE' version '1.0'
+* checking CRAN incoming feasibility ... WARNING
+Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
+
+New submission
+
+Package was archived on CRAN
+
+Insufficient package version (submitted: 1.0, existing: 1.0)
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2018-06-17 as check problems were not
+    corrected despite reminders.
+
+The Date field is over a month old.
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking serialization versions ... OK
+* checking whether package 'DivE' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+See 'C:/Users/dlaydon/Dropbox (SPH Imperial College)/Immunology/DivE_Package2019/DivE.Rcheck/00install.out' for details.
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... NOTE
+Found the following apparent S3 methods exported but not registered:
+  DiveMaster.default divsamplenum.default divsubsamples.default
+  fitsinglemod.default format.input plot.fitsingleMod
+  print.DiversityMaster print.divsubsamples print.fitsingleMod
+  print.scoresingleMod print.summary.DiversityMaster
+  print.summary.divsubsamples print.summary.fitsingleMod
+  print.summary.scoresingleMod scoresinglemod.default
+  summary.divsubsamples summary.fitsingleMod summary.scoresingleMod
+See section 'Registering S3 methods' in the 'Writing R Extensions'
+manual.
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking examples ... ERROR
+Running examples in 'DivE-Ex.R' failed
+The error most likely occurred in:
+
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: DiveMaster
+> ### Title: DiveMaster
+> ### Aliases: DiveMaster DiveMaster.default print.DiversityMaster
+> ###   summary.DiversityMaster print.summary.DiversityMaster
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> require(DivE)
+> data(Bact1)
+> data(ModelSet)
+> data(ParamSeeds)
+> data(ParamRanges)
+> 
+> testmodels <- list()
+> testmeta <- list()
+> paramranges <- list()
+> 
+> # Choose a single model 
+> testmodels <- c(testmodels, ModelSet[1])
+> #testmeta[[1]] <- (ParamSeeds[[1]]) # Commented out for sake of brevity)
+> testmeta[[1]] <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543598, 0.9870419),
++                         nrow=2, byrow=TRUE, dimnames=list(c(), c("a1", "a2", "a3"))) # Example seeds
+> paramranges[[1]] <- ParamRanges[[1]]
+> 
+> 
+> # Create divsubsamples object (NB: For quick illustration only -- not default parameters)
+> dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
+> dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
+> dss <- list(dss_2, dss_1)
+> 
+> # Implement the function (NB: For quick illustration only -- not default parameters)
+> out <- DiveMaster(models=testmodels, init.params=testmeta, param.ranges=paramranges,
++                   main.samp=Bact1, subsizes=c(65, 40), NResamples=5, fitloops=1,
++                   dssamp=dss, numit=2, varleft=10)
+Loading predefined subsamples 
+ ----------- FAILURE REPORT -------------- 
+ --- failure: length > 1 in coercion to logical ---
+ --- srcref --- 
+: 
+ --- package (from environment) --- 
+DivE
+ --- call from context --- 
+divsamplenum.default(main.samp, subsizes)
+ --- call from argument --- 
+(length(n) > 1) && (n < 2)
+ --- R stacktrace ---
+where 1: divsamplenum.default(main.samp, subsizes)
+where 2: divsamplenum(main.samp, subsizes)
+where 3: multiple.scoring(models, init.params, param.ranges, main.samp, 
+    tot.pop, numit, varleft, subsizes, dssamps, nrf, minrarefac, 
+    NResamples, minplaus, precision.lv, plaus.pen, crit.wts, 
+    fitloops, numpred)
+where 4: DiveMaster.default(models = testmodels, init.params = testmeta, 
+    param.ranges = paramranges, main.samp = Bact1, subsizes = c(65, 
+        40), NResamples = 5, fitloops = 1, dssamp = dss, numit = 2, 
+    varleft = 10)
+where 5: DiveMaster(models = testmodels, init.params = testmeta, param.ranges = paramranges, 
+    main.samp = Bact1, subsizes = c(65, 40), NResamples = 5, 
+    fitloops = 1, dssamp = dss, numit = 2, varleft = 10)
+
+ --- value of length: 2 type: logical ---
+[1] FALSE FALSE
+ --- function from context --- 
+function (ms, n = 6) 
+{
+    if ((length(n) > 1) && (n < 2)) {
+        stop("Number of nested subsamples (subsizes) must be 2 or greater")
+    }
+    main.samp <- format.input(ms)
+    gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
+}
+<bytecode: 0x00000000183f6f90>
+<environment: namespace:DivE>
+ --- function search by body ---
+Function divsamplenum.default in namespace DivE has this body.
+ ----------- END OF FAILURE REPORT -------------- 
+Fatal error: length > 1 in coercion to logical
+
+* checking PDF version of manual ... OK
+* DONE
+Status: 1 ERROR, 2 WARNINGs, 1 NOTE

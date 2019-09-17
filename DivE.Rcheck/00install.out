@@ -1,0 +1,23 @@
+* installing *source* package 'DivE' ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** demo
+** byte-compile and prepare package for lazy loading
+Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+*** arch - x64
+Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+** testing if installed package can be loaded from final location
+*** arch - i386
+Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+*** arch - x64
+Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+** testing if installed package keeps a record of temporary installation path
+* DONE (DivE)
