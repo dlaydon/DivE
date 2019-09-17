@@ -59,8 +59,9 @@ divsamplenum <- function(ms, n) {UseMethod("divsamplenum")}
 
 ############### A2c. Default generate subsample lengths function #################
 divsamplenum.default <- function(ms, n=6) { 
-  if ((length(n)>1) && (n<2)) { 
-    stop('Number of nested subsamples (subsizes) must be 2 or greater')
+  #if ((length(n)>1) && (n<2)) { 
+  if ((length(n)==1) && (n<2)) { 
+		  stop('Number of nested subsamples (subsizes) must be 2 or greater')
   }
   main.samp <- FormatInput(ms)
   gen.subsamp.lengths(main.samp=main.samp, num.subsamp=n)

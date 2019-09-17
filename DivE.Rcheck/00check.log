@@ -7,7 +7,7 @@
 * checking extension type ... Package
 * this is package 'DivE' version '1.1'
 * checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
+Maintainer: 'Daniel J. Laydon <d.laydon@imperial.ac.uk>'
 
 New submission
 
@@ -59,90 +59,7 @@ CRAN repository db overrides:
 * checking contents of 'data' directory ... OK
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
-* checking examples ... ERROR
-Running examples in 'DivE-Ex.R' failed
-The error most likely occurred in:
-
-> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: DiveMaster
-> ### Title: DiveMaster
-> ### Aliases: DiveMaster DiveMaster.default print.DiversityMaster
-> ###   summary.DiversityMaster print.summary.DiversityMaster
-> ### Keywords: diversity
-> 
-> ### ** Examples
-> 
-> require(DivE)
-> data(Bact1)
-> data(ModelSet)
-> data(ParamSeeds)
-> data(ParamRanges)
-> 
-> testmodels <- list()
-> testmeta <- list()
-> paramranges <- list()
-> 
-> # Choose a single model 
-> testmodels <- c(testmodels, ModelSet[1])
-> #testmeta[[1]] <- (ParamSeeds[[1]]) # Commented out for sake of brevity)
-> testmeta[[1]] <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543598, 0.9870419),
-+                         nrow=2, byrow=TRUE, dimnames=list(c(), c("a1", "a2", "a3"))) # Example seeds
-> paramranges[[1]] <- ParamRanges[[1]]
-> 
-> 
-> # Create divsubsamples object (NB: For quick illustration only -- not default parameters)
-> dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
-> dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
-> dss <- list(dss_2, dss_1)
-> 
-> # Implement the function (NB: For quick illustration only -- not default parameters)
-> out <- DiveMaster(models=testmodels, init.params=testmeta, param.ranges=paramranges,
-+                   main.samp=Bact1, subsizes=c(65, 40), NResamples=5, fitloops=1,
-+                   dssamp=dss, numit=2, varleft=10)
-Loading predefined subsamples 
- ----------- FAILURE REPORT -------------- 
- --- failure: length > 1 in coercion to logical ---
- --- srcref --- 
-: 
- --- package (from environment) --- 
-DivE
- --- call from context --- 
-divsamplenum.default(main.samp, subsizes)
- --- call from argument --- 
-(length(n) > 1) && (n < 2)
- --- R stacktrace ---
-where 1: divsamplenum.default(main.samp, subsizes)
-where 2: divsamplenum(main.samp, subsizes)
-where 3: multiple.scoring(models, init.params, param.ranges, main.samp, 
-    tot.pop, numit, varleft, subsizes, dssamps, nrf, minrarefac, 
-    NResamples, minplaus, precision.lv, plaus.pen, crit.wts, 
-    fitloops, numpred)
-where 4: DiveMaster.default(models = testmodels, init.params = testmeta, 
-    param.ranges = paramranges, main.samp = Bact1, subsizes = c(65, 
-        40), NResamples = 5, fitloops = 1, dssamp = dss, numit = 2, 
-    varleft = 10)
-where 5: DiveMaster(models = testmodels, init.params = testmeta, param.ranges = paramranges, 
-    main.samp = Bact1, subsizes = c(65, 40), NResamples = 5, 
-    fitloops = 1, dssamp = dss, numit = 2, varleft = 10)
-
- --- value of length: 2 type: logical ---
-[1] FALSE FALSE
- --- function from context --- 
-function (ms, n = 6) 
-{
-    if ((length(n) > 1) && (n < 2)) {
-        stop("Number of nested subsamples (subsizes) must be 2 or greater")
-    }
-    main.samp <- FormatInput(ms)
-    gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
-}
-<bytecode: 0x00000000183e9068>
-<environment: namespace:DivE>
- --- function search by body ---
-Function divsamplenum.default in namespace DivE has this body.
- ----------- END OF FAILURE REPORT -------------- 
-Fatal error: length > 1 in coercion to logical
-
+* checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 1 NOTE
+Status: 1 NOTE

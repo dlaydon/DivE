@@ -89,7 +89,7 @@ License: \tab GPL (>= 2) \cr
 The main function is DiveMaster, which combines the four functions divsamplenum, divsubsamples, fitsinglemod, and scoresinglemod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
 }
 \author{
-Daniel J. Laydon, Aaron Sim, Charles Bangham, Becca Asquith
+Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 }
 \references{
 Laydon, D. J., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014

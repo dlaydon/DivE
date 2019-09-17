@@ -134,46 +134,402 @@ rgeos version: 0.5-1, (SVN revision 614)
 +                   main.samp=Bact1, subsizes=c(65, 40), NResamples=5, fitloops=1,
 +                   dssamp=dss, numit=2, varleft=10)
 Loading predefined subsamples 
- ----------- FAILURE REPORT -------------- 
- --- failure: length > 1 in coercion to logical ---
- --- srcref --- 
-: 
- --- package (from environment) --- 
-DivE
- --- call from context --- 
-divsamplenum.default(main.samp, subsizes)
- --- call from argument --- 
-(length(n) > 1) && (n < 2)
- --- R stacktrace ---
-where 1: divsamplenum.default(main.samp, subsizes)
-where 2: divsamplenum(main.samp, subsizes)
-where 3: multiple.scoring(models, init.params, param.ranges, main.samp, 
-    tot.pop, numit, varleft, subsizes, dssamps, nrf, minrarefac, 
-    NResamples, minplaus, precision.lv, plaus.pen, crit.wts, 
-    fitloops, numpred)
-where 4: DiveMaster.default(models = testmodels, init.params = testmeta, 
-    param.ranges = paramranges, main.samp = Bact1, subsizes = c(65, 
-        40), NResamples = 5, fitloops = 1, dssamp = dss, numit = 2, 
-    varleft = 10)
-where 5: DiveMaster(models = testmodels, init.params = testmeta, param.ranges = paramranges, 
-    main.samp = Bact1, subsizes = c(65, 40), NResamples = 5, 
-    fitloops = 1, dssamp = dss, numit = 2, varleft = 10)
+Fitting model 1 of 1 (Est. time remaining: tbd mins) 
+Fitting loop 1 
+Performing fitting routine for sample  1 
+Choosing optimal initial parameters for global fit 
+Performing global fit 
+Performing local fit 
+Performing fitting routine for sample  2 
+Choosing optimal initial parameters for global fit 
+Performing global fit 
+Performing local fit 
+Scoring model 1 
+Aggregating scoring for model 1 
+> 
+> # DiveMaster Outputs
+> out
+Model score ($model.scores):
+         Combined score
+logistic          201.5
 
- --- value of length: 2 type: logical ---
-[1] FALSE FALSE
- --- function from context --- 
-function (ms, n = 6) 
-{
-    if ((length(n) > 1) && (n < 2)) {
-        stop("Number of nested subsamples (subsizes) must be 2 or greater")
-    }
-    main.samp <- FormatInput(ms)
-    gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
-}
-<bytecode: 0x00000000183e9068>
-<environment: namespace:DivE>
- --- function search by body ---
-Function divsamplenum.default in namespace DivE has this body.
- ----------- END OF FAILURE REPORT -------------- 
-Fatal error: length > 1 in coercion to logical
+Population diversity estimate ($estimate):
+[1] 98.38236
+> out$estimate
+[1] 98.38236
+> 
+> out$fmm$logistic
+Fitting results for model: logistic 
+Model parameters ($param):
+          a1          a2       a3
+65 0.8652003 0.008793449 1.033428
+40 0.9015891 0.007722836 1.023604
 
+Subsample sizes ($subsamplesizes):
+[1] 65 40
+
+Measures for discrepancies between rarefaction data and model fits ($discrep, $ssr, $ms):
+   Mean_absolute_error Sum_of_squares Mean_squared_residual
+65          0.02220715       3.731918            0.11308842
+40          0.02107675       1.554592            0.07402821
+
+Diversity predictions and the local prediction accuracy ($AccuracyToObserved, $local, $global):
+   Accuracy_to_observed_dataset_diversity Predicted_local_diversity
+65                             -0.3240167                  97.34159
+40                             -0.2000115                 115.19834
+   Predicted_global_diversity
+65                   98.38236
+40                  116.72923
+
+Similarity measure: normalised area between curve and largest-sample curve ($local.ref.dist):
+   Distance_from_local_reference_curve
+40                           0.1759538
+
+Plausibility measures: monotonicity and decreasing 2nd derivative ($plausibility):
+   Is plausible Monotonically increasing Slowing
+65         TRUE                     TRUE    TRUE
+40         TRUE                     TRUE    TRUE
+> 
+> out$fmm$logistic$global
+   Predicted_global_diversity
+65                   98.38236
+40                  116.72923
+> 
+> out$ssm
+         fit accuracy similarity plausibility
+logistic 217       53         36          500
+> 
+> summary(out)
+Call:
+DiveMaster.default(models = testmodels, init.params = testmeta, 
+    param.ranges = paramranges, main.samp = Bact1, numit = 2, 
+    varleft = 10, subsizes = c(65, 40), dssamps = dss, NResamples = 5, 
+    fitloops = 1)
+
+Multiple Model fitting and scoring summary:
+  Number_of_models_fitted Best_scoring_model Estimated_global_diversity
+1                       1           logistic                   98.38236
+  Diversity_upperbound Diversity_lowerbound
+1             98.38236             98.38236
+> 
+> ## Combining two DiveMaster objects (assuming a second object 'out2'):
+> # out3 <- comb.dm(list(out, out2))
+> 
+> ## To calculate the diversity for a different population size
+> # popdiversity(dm=out, popsize=10^5, TopX=1)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("DiveMaster", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("ModelSet")
+> ### * ModelSet
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: ModelSet
+> ### Title: List of 58 candidate models to fit to data
+> ### Aliases: ModelSet
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(ModelSet)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("ModelSet", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("ParamRanges")
+> ### * ParamRanges
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: ParamRanges
+> ### Title: List of 58 sets of upper and lower bounds for models evaluated
+> ###   by DivE
+> ### Aliases: ParamRanges
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(ParamRanges)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("ParamRanges", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("ParamSeeds")
+> ### * ParamSeeds
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: ParamSeeds
+> ### Title: List of 58 matrices of model seeding parameters.
+> ### Aliases: ParamSeeds
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(ParamSeeds)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("ParamSeeds", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("comb.dm")
+> ### * comb.dm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: comb.dm
+> ### Title: comb.dm
+> ### Aliases: comb.dm
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> # See DiveMaster documentation for examples.
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("comb.dm", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("divsamplenum")
+> ### * divsamplenum
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: divsamplenum
+> ### Title: divsamplenum
+> ### Aliases: divsamplenum divsamplenum.default
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> require(DivE)
+> data(Bact1)
+> 
+> divsamplenum(Bact1, 3)
+[1] 7814 5209 2605
+> divsamplenum(Bact1, 6)
+[1] 7814 6512 5209 3907 2605 1302
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("divsamplenum", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("divsubsamples")
+> ### * divsubsamples
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: divsubsamples
+> ### Title: divsubsamples
+> ### Aliases: divsubsamples divsubsamples.default print.divsubsamples
+> ###   summary.divsubsamples print.summary.divsubsamples
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> require(DivE)
+> data(Bact1)
+> 
+> dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=100,
++                         NResamples=10) 
+> dss_2 <- divsubsamples(Bact1, nrf=20, minrarefac=1, maxrarefac=100,
++                         NResamples=10)
+> # Default NResamples=1000; low value of NResamples=10 is a set for quick evaluation
+> 
+> dss_1
+RarefacXAxis:
+ [1]   1   3   5   7   9  11  13  15  17  19  21  23  25  27  29  31  33  35  37
+[20]  39  41  43  45  47  49  51  53  55  57  59  61  63  65  67  69  71  73  75
+[39]  77  79  81  83  85  87  89  91  93  95  97  99 100
+
+RarefacYAxis (Mean diversity values):
+ [1]  1.0  3.0  4.8  6.6  8.6 10.5 11.7 13.4 15.1 16.4 17.9 19.6 21.1 21.9 23.2
+[16] 24.0 25.2 26.4 27.6 28.9 30.4 31.1 32.4 33.4 34.3 35.0 35.7 36.2 37.2 38.0
+[31] 38.8 39.4 40.3 41.4 42.1 43.0 43.7 44.4 45.2 45.8 46.9 47.4 48.0 49.3 49.9
+[46] 50.6 51.2 51.7 52.4 53.4 53.5
+> dss_2
+RarefacXAxis:
+[1]   1  21  41  61  81 100
+
+RarefacYAxis (Mean diversity values):
+[1]  1.0 17.3 29.8 38.8 45.5 50.7
+> 
+> summary(dss_1)
+Call:
+divsubsamples.default(mainsamp = Bact1, nrf = 2, minrarefac = 1, 
+    maxrarefac = 100, NResamples = 10)
+
+Subsample data summary:
+     Subsample.size Subsample.diversity No.of.rarefac.points Iterations
+[1,]            100                53.5                   51         10
+     Ave.StdErr
+[1,] 0.07540005
+> dss_1$div_sd
+ [1] 0.0000000 0.0000000 0.4216370 0.5163978 0.5163978 0.5270463 0.9486833
+ [8] 0.9660918 1.3703203 1.3498971 1.4491377 1.8973666 2.0248457 2.1317703
+[15] 2.2010099 1.8856181 2.2010099 2.0655911 1.8973666 2.0248457 2.3190036
+[22] 1.9692074 2.1186998 2.2705848 2.3593784 2.2607767 2.6687492 2.8205594
+[29] 2.8205594 3.2998316 3.2930904 3.4383459 3.5292429 3.9496835 3.7252890
+[36] 3.7118429 3.6832956 3.5023801 3.2249031 3.2249031 3.4464152 3.8355066
+[43] 3.7712362 3.7727090 3.9567102 3.8930137 3.6757463 3.8600518 3.8930137
+[50] 3.9777157 4.0892814
+> dss_1$NResamples
+[1] 10
+> 
+> Curvature(dss_1)
+[1] 0.192729
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("divsubsamples", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("fitsinglemod")
+> ### * fitsinglemod
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: fitsinglemod
+> ### Title: fitsinglemod
+> ### Aliases: fitsinglemod fitsinglemod.default print.fitsingleMod
+> ###   summary.fitsingleMod print.summary.fitsingleMod plot.fitsingleMod
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> # See documentation of \code{scoresinglemod} for examples
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("fitsinglemod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("popdiversity")
+> ### * popdiversity
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: popdiversity
+> ### Title: popdiversity
+> ### Aliases: popdiversity
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> # See DiveMaster documentation for examples.
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("popdiversity", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("scoresinglemod")
+> ### * scoresinglemod
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: scoresinglemod
+> ### Title: scoresinglemod
+> ### Aliases: scoresinglemod scoresinglemod.default print.scoresingleMod
+> ###   summary.scoresingleMod print.summary.scoresingleMod
+> ### Keywords: diversity
+> 
+> ### ** Examples
+> 
+> require(DivE)
+> data(Bact1)
+> data(ModelSet)
+> data(ParamSeeds)
+> data(ParamRanges)
+> 
+> testmodels <- list()
+> testmeta <- list()
+> paramranges <- list()   
+> 
+> # Choose a single model
+> 
+> testmodels <- c(testmodels, ModelSet[1])
+> # testmeta <- (ParamSeeds[[1]]) # Commented out for sake of brevity)
+> testmeta <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543598, 0.9870419),
++                         nrow=2, byrow=TRUE, dimnames=list(c(), c("a1", "a2", "a3"))) # Example seeds
+> paramranges <- ParamRanges[[1]]
+> 
+> # Create divsubsamples object (NB: For quick illustration only -- not default parameters)
+> dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
+> dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
+> dss <- list(dss_2, dss_1)
+> 
+> # Fit the model (NB: For quick illustration only -- not default parameters)
+> fsm <- fitsinglemod(model.list=testmodels, init.param=testmeta, param.range=paramranges,
++                     main.samp=Bact1, dssamps=dss, fitloops=1, data.default=FALSE,
++                     subsizes=c(65, 40), 
++                     numit=2) # numit chosen to be extremely small to speed up example
+Fitting loop 1 
+Performing fitting routine for sample  1 
+Choosing optimal initial parameters for global fit 
+Performing global fit 
+Performing local fit 
+Performing fitting routine for sample  2 
+Choosing optimal initial parameters for global fit 
+Performing global fit 
+Performing local fit 
+> 
+> 
+> # Score the model
+> ssm <- scoresinglemod(fsm)
+> 
+> ssm
+Scoring results ($[colnames]):
+         discrepancy accuracy similarity plausibility
+logistic         217       53         36          500
+> summary(ssm)
+Call:
+scoresinglemod.default(fsm = fsm)
+
+Single model scoring setup summary:
+     Model.name precision.fit precision.accuracy precision.similarity
+[1,] "logistic" "1e-04"       "0.005"            "0.005"             
+     Plausibility.penalty
+[1,] "500"               
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("scoresinglemod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  6.16 0.59 6.94 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
