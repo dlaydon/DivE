@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  17 SEP 2019 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  17 SEP 2019 15:39
 entering extended mode
-**C:/Users/dlaydon/AppData/Local/Temp/RtmpeczOAi/Rd2pdf2ac442ec23b8/Rd2.tex
-(C:/Users/dlaydon/AppData/Local/Temp/RtmpeczOAi/Rd2pdf2ac442ec23b8/Rd2.tex
+**C:/Users/dlaydon/AppData/Local/Temp/RtmpmiKxyw/Rd2pdf4d5451d3b1e/Rd2.tex
+(C:/Users/dlaydon/AppData/Local/Temp/RtmpmiKxyw/Rd2pdf4d5451d3b1e/Rd2.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book.cls"
@@ -826,12 +826,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1010.
  ) 
 Here is how much of TeX's memory you used:
  6514 strings out of 492895
- 96706 string characters out of 3122801
+ 96695 string characters out of 3122801
  180431 words of memory out of 3000000
  10130 multiletter control sequences out of 15000+200000
  40981 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,36p,4406b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,6n,36p,4405b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Rfn.modFit} has been referenced but does not exis
 t, replaced by a fixed one
 
@@ -850,7 +850,7 @@ s/cm/cmsy10.pfb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 ograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (23 pages, 221388 bytes).
+Output written on Rd2.pdf (23 pages, 221385 bytes).
 PDF statistics:
  525 PDF objects out of 1000 (max. 8388607)
  206 named destinations out of 1000 (max. 500000)

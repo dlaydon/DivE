@@ -26,7 +26,7 @@ CRAN repository db overrides:
 * checking serialization versions ... OK
 * checking whether package 'DivE' can be installed ... WARNING
 Found the following significant warnings:
-  Warning: replacing previous import 'sp::plot' by 'graphics::plot' when loading 'DivE'
+  Warning: replacing previous import 'rgeos::plot' by 'graphics::plot' when loading 'DivE'
 See 'C:/Users/dlaydon/Dropbox (SPH Imperial College)/Immunology/DivE_Package2019/DivE.Rcheck/00install.out' for details.
 * checking installed package size ... OK
 * checking package directory ... OK
@@ -59,7 +59,12 @@ See section 'Registering S3 methods' in the 'Writing R Extensions'
 manual.
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+crossings: no visible global function definition for 'SpatialLines'
+crossings: no visible global function definition for 'Lines'
+crossings: no visible global function definition for 'Line'
+Undefined global functions or variables:
+  Line Lines SpatialLines
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -149,7 +154,7 @@ function (ms, n = 6)
     main.samp <- format.input(ms)
     gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
 }
-<bytecode: 0x0000000017407b70>
+<bytecode: 0x00000000183e5088>
 <environment: namespace:DivE>
  --- function search by body ---
 Function divsamplenum.default in namespace DivE has this body.
@@ -158,4 +163,4 @@ Fatal error: length > 1 in coercion to logical
 
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 1 WARNING, 2 NOTEs
+Status: 1 ERROR, 1 WARNING, 3 NOTEs
