@@ -171,7 +171,7 @@ function (ms, n = 6)
     main.samp <- format.input(ms)
     gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
 }
-<bytecode: 0x00000000183f6f90>
+<bytecode: 0x0000000017407b70>
 <environment: namespace:DivE>
  --- function search by body ---
 Function divsamplenum.default in namespace DivE has this body.

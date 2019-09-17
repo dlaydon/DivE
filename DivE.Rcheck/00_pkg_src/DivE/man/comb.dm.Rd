@@ -35,7 +35,7 @@ An object of class \emph{DiversityMaster}, i.e. a list of objects
   \item{m }{number of topscoring models used for diversity estimate. This is set as the smallest \code{m} value of each of the \emph{DiversityMaster} objects in the list}
 }
 \references{
-Laydon, D., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
+Laydon, D. J., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
 }
 \author{
 Daniel Laydon, Aaron Sim, Charles Bangham, Becca Asquith

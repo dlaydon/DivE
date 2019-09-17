@@ -5,21 +5,17 @@
 * using option '--as-cran'
 * checking for file 'DivE/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'DivE' version '1.0'
-* checking CRAN incoming feasibility ... WARNING
+* this is package 'DivE' version '1.1'
+* checking CRAN incoming feasibility ... NOTE
 Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
 
 New submission
 
 Package was archived on CRAN
 
-Insufficient package version (submitted: 1.0, existing: 1.0)
-
 CRAN repository db overrides:
   X-CRAN-Comment: Archived on 2018-06-17 as check problems were not
     corrected despite reminders.
-
-The Date field is over a month old.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -153,7 +149,7 @@ function (ms, n = 6)
     main.samp <- format.input(ms)
     gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
 }
-<bytecode: 0x00000000183f6f90>
+<bytecode: 0x0000000017407b70>
 <environment: namespace:DivE>
  --- function search by body ---
 Function divsamplenum.default in namespace DivE has this body.
@@ -162,4 +158,4 @@ Fatal error: length > 1 in coercion to logical
 
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 2 WARNINGs, 1 NOTE
+Status: 1 ERROR, 1 WARNING, 2 NOTEs
