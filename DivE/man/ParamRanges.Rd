@@ -14,7 +14,7 @@ A list of 58 matrices. Each matrix corresponds to a model in \code{ModelSet}, fo
 There is a trade-off between specifying parameter ranges that are large enough to encompass likely fitted values for a variety of data sets, and specifying parameter ranges that are suitably small so that parameter estimation is sufficiently precise and runtime is managable. We have aimed to balance these competing concerns.  The parameter ranges provided performed well in our simulations. The user can amend if required. 
 }
 \references{
-Laydon, D., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
+Laydon, D. J., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
 }
 \examples{
 data(ParamRanges)

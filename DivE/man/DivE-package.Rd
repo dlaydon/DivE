@@ -6,7 +6,7 @@
 Diversity Estimator
 }
 \description{
-R-package \emph{DivE} contains functions for the DivE estimator (Laydon, D. \emph{et al.}, Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014). The \emph{DivE} estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
+R-package \emph{DivE} contains functions for the DivE estimator (Laydon, D.J. \emph{et al.}, Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014). The \emph{DivE} estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
 
 \emph{DivE} fits many mathematical models to multiple nested subsamples of individual-based rarefaction curves. These curves depict the expected number of species as a function of the number of individuals (e.g. T cells, virions, microbes). Each model is fitted to all nested subsamples, producing multiple model fits. Novel criteria are used to score each model in how consistently its fits reproduce the full observed rarefaction curve from the nested subsamples, i.e. from only incomplete data. The best performing models are extrapolated to a desired population size, and their estimates are aggregated to estimate the number of classes in the population. 
 
@@ -74,7 +74,7 @@ To obtain better parameter fits, the fitting process can be repeated. Fitted par
 
 \bold{Contact}
 
-Daniel Laydon, Section of Immunology, Division of Infectious Diseases, Department of Medicine, Imperial College London, Wright-Fleming Institute, Norfolk Place, W2 1PG
+Daniel J. Laydon, Section of Immunology, Division of Infectious Diseases, Department of Medicine, Imperial College London, Wright-Fleming Institute, Norfolk Place, W2 1PG
 
 d.laydon@imperial.ac.uk
 }
@@ -82,17 +82,17 @@ d.laydon@imperial.ac.uk
 \tabular{ll}{
 Package: \tab DivE\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-05-01\cr
+Version: \tab 1.1\cr
+Date: \tab 2019-08-17\cr
 License: \tab GPL (>= 2) \cr
 }
 The main function is DiveMaster, which combines the four functions divsamplenum, divsubsamples, fitsinglemod, and scoresinglemod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
 }
 \author{
-Daniel Laydon, Aaron Sim, Charles Bangham, Becca Asquith
+Daniel J. Laydon, Aaron Sim, Charles Bangham, Becca Asquith
 }
 \references{
-Laydon, D., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
+Laydon, D. J., Melamed, A., Sim, A., Gillet, N. A., Sim, K., Darko, S., Kroll, S., Douek, D. C., Price, D., Bangham, C. R. M., Asquith, B., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014
 }
 \keyword{ package }
 
