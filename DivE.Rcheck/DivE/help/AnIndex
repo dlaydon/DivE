@@ -25,7 +25,7 @@ fitallSubs	DivE-internal
 fitsample	DivE-internal
 fitsinglemod	fitsinglemod
 fitsinglemod.default	fitsinglemod
-format.input	DivE-internal
+FormatInput	DivE-internal
 gen.rarefac.div	DivE-internal
 gen.rarefac.lengths	DivE-internal
 gen.subsamp.lengths	DivE-internal

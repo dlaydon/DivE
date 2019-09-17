@@ -12,7 +12,7 @@
 \alias{local.fit}
 \alias{fitsample}
 \alias{fitallSubs}
-\alias{format.input}
+\alias{FormatInput}
 \alias{gen.subsamp.lengths}
 \alias{gen.rarefac.div}
 \alias{gen.rarefac.lengths}

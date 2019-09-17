@@ -24,10 +24,7 @@ CRAN repository db overrides:
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking serialization versions ... OK
-* checking whether package 'DivE' can be installed ... WARNING
-Found the following significant warnings:
-  Warning: replacing previous import 'rgeos::plot' by 'graphics::plot' when loading 'DivE'
-See 'C:/Users/dlaydon/Dropbox (SPH Imperial College)/Immunology/DivE_Package2019/DivE.Rcheck/00install.out' for details.
+* checking whether package 'DivE' can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -48,13 +45,8 @@ See 'C:/Users/dlaydon/Dropbox (SPH Imperial College)/Immunology/DivE_Package2019
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... NOTE
 Found the following apparent S3 methods exported but not registered:
-  DiveMaster.default divsamplenum.default divsubsamples.default
-  fitsinglemod.default format.input plot.fitsingleMod
-  print.DiversityMaster print.divsubsamples print.fitsingleMod
-  print.scoresingleMod print.summary.DiversityMaster
-  print.summary.divsubsamples print.summary.fitsingleMod
-  print.summary.scoresingleMod scoresinglemod.default
-  summary.divsubsamples summary.fitsingleMod summary.scoresingleMod
+  print.summary.DiversityMaster print.summary.divsubsamples
+  print.summary.fitsingleMod print.summary.scoresingleMod
 See section 'Registering S3 methods' in the 'Writing R Extensions'
 manual.
 * checking replacement functions ... OK
@@ -151,10 +143,10 @@ function (ms, n = 6)
     if ((length(n) > 1) && (n < 2)) {
         stop("Number of nested subsamples (subsizes) must be 2 or greater")
     }
-    main.samp <- format.input(ms)
+    main.samp <- FormatInput(ms)
     gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
 }
-<bytecode: 0x00000000183e5088>
+<bytecode: 0x0000000017be6550>
 <environment: namespace:DivE>
  --- function search by body ---
 Function divsamplenum.default in namespace DivE has this body.
@@ -163,4 +155,4 @@ Fatal error: length > 1 in coercion to logical
 
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 1 WARNING, 3 NOTEs
+Status: 1 ERROR, 3 NOTEs

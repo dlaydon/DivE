@@ -13,7 +13,7 @@ Function to generate the rarefaction data from a given sample
 }
 \usage{
 divsubsamples(mainsamp, nrf, minrarefac=1,
-maxrarefac=length(format.input(mainsamp)), NResamples=1000)
+maxrarefac=length(FormatInput(mainsamp)), NResamples=1000)
 }
 
 %- maybe also 'usage' for other objects documented here.

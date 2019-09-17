@@ -30,7 +30,7 @@
 # Two formats accepted:
 # i. dataframe with two variables - clone id, number of clones
 # ii. dataframe, vector or matrix with one dimension
-format.input <- function(x, ...) {
+FormatInput <- function(x, ...) {
   if (is.data.frame(x) && (dim(x)[2] == 2)) {
     as.character(rep(x[,1], x[,2]))
   } else if (is.vector(x)) {
@@ -62,13 +62,13 @@ divsamplenum.default <- function(ms, n=6) {
   if ((length(n)>1) && (n<2)) { 
     stop('Number of nested subsamples (subsizes) must be 2 or greater')
   }
-  main.samp <- format.input(ms)
+  main.samp <- FormatInput(ms)
   gen.subsamp.lengths(main.samp=main.samp, num.subsamp=n)
 }
 
 ############ A3a. Function to generate vector of rarefaction datapoints ############
 # Inputs: Any sample, desired interval between rarefaction points, maximum data size of subsample, minimum data size of subsample
-gen.rarefac.lengths <- function(samp, num.rarefac, max.rarefac=length(format.input(samp)), min.rarefac=1) {
+gen.rarefac.lengths <- function(samp, num.rarefac, max.rarefac=length(FormatInput(samp)), min.rarefac=1) {
   rarefac.int <- num.rarefac
   out <- round(seq(from=min.rarefac, to=max.rarefac, by=rarefac.int))
   if (out[length(out)]==max.rarefac) {
@@ -85,7 +85,7 @@ div.count <- function(samp) {length(unique(samp))}
 
 ##### A3c. Function to generate the sample diversity values at rarefaction datapoints for fitting ####
 # Inputs: Sample, interval between rarefaction datapoints, minimum data size of subsample, Iterations, maximum data size of subsample 
-gen.rarefac.div <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=length(format.input(samp))) {
+gen.rarefac.div <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=length(FormatInput(samp))) {
   l <- length(samp)
   rarefac.lengths <- gen.rarefac.lengths(samp, num.rarefac, max.rarefac, min.rarefac)
   s <- length(rarefac.lengths)
@@ -108,11 +108,11 @@ gen.rarefac.div <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=len
 }
 
 ############## A3d. Generic generate subsamples/diversity function ############
-divsubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(format.input(mainsamp)), NResamples=1000) {UseMethod("divsubsamples")}
+divsubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) {UseMethod("divsubsamples")}
 
 ############# A3e. Default generate subsamples/diversity function #############
-divsubsamples.default <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(format.input(mainsamp)), NResamples=1000) { 
-  samp <- format.input(mainsamp)
+divsubsamples.default <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
+  samp <- FormatInput(mainsamp)
 
   xyvals <- gen.rarefac.div(samp=samp, num.rarefac=nrf, min.rarefac=minrarefac, B=NResamples, max.rarefac=maxrarefac)
 
@@ -565,7 +565,7 @@ fitsinglemod.default <- function(model.list, init.param, param.range, main.samp,
                                  numit=10^5, varleft=1e-8, data.default=TRUE, subsizes=6, dssamps=list(),
                                  nrf=1, minrarefac=1, NResamples=1000, minplaus=10, fitloops=2) { 
   
-  v1 <- format.input(main.samp) # Convert samp to a vector of length=main sample length and with clone ids
+  v1 <- FormatInput(main.samp) # Convert samp to a vector of length=main sample length and with clone ids
   if (data.default) {
     cat("Creating subsamples and rarefaction data", "\n")
     SS <- divsamplenum(main.samp, subsizes)
@@ -939,7 +939,7 @@ multiple.scoring <- function(models, init.params, param.ranges, main.samp, tot.p
     cat("Creating subsamples and rarefaction data", "\n")
     mas.dss <- list() # Create 3 master samples
     mas.SS <- divsamplenum(main.samp, subsizes) # Create master vector of 3 samples sizes
-    samp <- format.input(main.samp) # Format main sample
+    samp <- FormatInput(main.samp) # Format main sample
     
     dss.main <- divsubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=mas.SS[1], NResamples=NResamples)
     mas.dss[[1]] <- dss.main
@@ -952,7 +952,7 @@ multiple.scoring <- function(models, init.params, param.ranges, main.samp, tot.p
   } else {
     cat("Loading predefined subsamples", "\n")
     mas.SS <- divsamplenum(main.samp, subsizes)
-    samp <- format.input(main.samp) # Format main sample
+    samp <- FormatInput(main.samp) # Format main sample
 
     mas.dss <- dssamps
   }
