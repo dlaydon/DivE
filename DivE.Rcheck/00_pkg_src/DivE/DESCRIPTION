@@ -5,11 +5,11 @@ Version: 1.1
 Date: 2019-09-17
 Author: Daniel Laydon, Aaron Sim, Charles Bangham, Becca Asquith
 Maintainer: Daniel Laydon <d.laydon@imperial.ac.uk>
-Depends: deSolve, FME, rgeos, R (>= 2.15.3)
-Description: R-package DivE contains functions for the DivE estimator (Laydon, D. J. et al., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014). The DivE estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
+Depends: deSolve, FME, rgeos, sp, R (>= 2.15.3)
+Description: R-package DivE contains functions for the DivE estimator (Laydon, D.J. et al., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014). The DivE estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
 License: GPL (>= 2)
 LazyData: TRUE
-Packaged: 2019-09-17 16:46:27 UTC; dlaydon
+Packaged: 2019-09-17 17:34:53 UTC; dlaydon
 NeedsCompilation: no
 Repository: CRAN
 Date/Publication: 2019-09-17 19:07:04

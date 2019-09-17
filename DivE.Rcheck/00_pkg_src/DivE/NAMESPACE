@@ -1,8 +1,14 @@
 exportPattern("^[[:alpha:]]+")
-import(FME, deSolve, rgeos)
+import(FME, deSolve, rgeos, sp)
 importFrom("graphics", "lines", "points")
 importFrom("stats", "integrate", "sd")
 importFrom("utils", "tail")
+
+#importFrom("rgeos", "SpatialLines", "Lines", "Line")
+#importFrom("rgeos", "SpatialLines")
+#importFrom("rgeos", "Lines")
+#importFrom("rgeos", "Line")
+
 S3method(summary,DiversityMaster)
 S3method(summary,divsubsamples)
 S3method(summary,fitsingleMod)

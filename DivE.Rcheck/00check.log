@@ -46,12 +46,7 @@ CRAN repository db overrides:
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... NOTE
-crossings: no visible global function definition for 'SpatialLines'
-crossings: no visible global function definition for 'Lines'
-crossings: no visible global function definition for 'Line'
-Undefined global functions or variables:
-  Line Lines SpatialLines
+* checking R code for possible problems ... OK
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -141,7 +136,7 @@ function (ms, n = 6)
     main.samp <- FormatInput(ms)
     gen.subsamp.lengths(main.samp = main.samp, num.subsamp = n)
 }
-<bytecode: 0x00000000183d6310>
+<bytecode: 0x00000000183e9068>
 <environment: namespace:DivE>
  --- function search by body ---
 Function divsamplenum.default in namespace DivE has this body.
@@ -150,4 +145,4 @@ Fatal error: length > 1 in coercion to logical
 
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 2 NOTEs
+Status: 1 ERROR, 1 NOTE
