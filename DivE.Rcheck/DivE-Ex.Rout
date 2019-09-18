@@ -333,7 +333,7 @@ Multiple Model fitting and scoring summary:
 > # out3 <- CombDM(list(out, out2))
 > 
 > ## To calculate the diversity for a different population size
-> # popdiversity(dm=out, popsize=10^5, TopX=1)
+> # PopDiversity(dm=out, popsize=10^5, TopX=1)
 > 
 > 
 > 
@@ -522,7 +522,7 @@ Single model scoring setup summary:
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.72 0.64 7.53 NA NA 
+Time elapsed:  8.08 0.79 9.33 NA NA 
 > grDevices::dev.off()
 null device 
           1 

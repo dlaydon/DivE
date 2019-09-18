@@ -80,7 +80,7 @@ This is the master function of the DivE estimator. The default operation is a co
 
 A list of DiveMaster objects, each representing the fits to different sets of models, can combined into a single DiveMaster object using the \code{CombDM} function. This is useful when running the DivE estimator with the full set of 58 models in a single run is not possible.
 
-One can estimate the diversity for a given population using the \code{popdiversity} function where the arguments are the Divemaster object and the population size respectively.
+One can estimate the diversity for a given population using the \code{PopDiversity} function where the arguments are the Divemaster object and the population size respectively.
 }
 \value{
 A list of objects:
@@ -153,7 +153,7 @@ summary(out)
 # out3 <- CombDM(list(out, out2))
 
 ## To calculate the diversity for a different population size
-# popdiversity(dm=out, popsize=10^5, TopX=1)
+# PopDiversity(dm=out, popsize=10^5, TopX=1)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

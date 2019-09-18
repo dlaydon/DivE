@@ -202,7 +202,7 @@ summary(out)
 # out3 <- CombDM(list(out, out2))
 
 ## To calculate the diversity for a different population size
-# popdiversity(dm=out, popsize=10^5, TopX=1)
+# PopDiversity(dm=out, popsize=10^5, TopX=1)
 
 
 

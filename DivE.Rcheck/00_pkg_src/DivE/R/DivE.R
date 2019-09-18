@@ -46,34 +46,34 @@ FormatInput <- function(x, ...) {
 ############## A2a. Function to generate vector of subsample lengths #############
 # Inputs: Main sample, desired number of subsamples
 # By default produces a vector of length six with equally spaced subsample sizes
-GenSubsampLengths <- function(main.samp, num.subsamp) {
-  if ((length(num.subsamp))!=1) {
-    sort(num.subsamp, decreasing=TRUE)
+GenSubsampLengths <- function(main.samp, N_Subsamp) {
+  if ((length(N_Subsamp))!=1) {
+    sort(N_Subsamp, decreasing=TRUE)
   } else {
-    samp.int <- length(main.samp)/num.subsamp
-    sort(round(seq(from=samp.int, to=length(main.samp), by=samp.int)), decreasing=TRUE)
+    SampInt <- length(main.samp)/N_Subsamp
+    sort(round(seq(from=SampInt, to=length(main.samp), by=SampInt)), decreasing=TRUE)
   }
 }
 
 ############### A2b. Generate subsample lengths function #################
 DivSampleNum <- function(ms, n=6) { 
   if ((length(n)==1) && (n<2)) { 
-		  stop('Number of nested subsamples (subsizes) must be 2 or greater')
+	stop('Number of nested subsamples (subsizes) must be 2 or greater')
   }
   main.samp <- FormatInput(ms)
-  GenSubsampLengths(main.samp=main.samp, num.subsamp=n)
+  GenSubsampLengths(main.samp=main.samp, N_Subsamp=n)
 }
 
 
 ############ A3a. Function to generate vector of rarefaction datapoints ############
 # Inputs: Any sample, desired interval between rarefaction points, maximum data size of subsample, minimum data size of subsample
-GenRarefacLengths <- function(samp, num.rarefac, max.rarefac=length(FormatInput(samp)), min.rarefac=1) {
-  rarefac.int <- num.rarefac
-  out <- round(seq(from=min.rarefac, to=max.rarefac, by=rarefac.int))
-  if (out[length(out)]==max.rarefac) {
+GenRarefacLengths <- function(samp, N_Rarefac, Max_Rarefac=length(FormatInput(samp)), Min_Rarefac=1) {
+  RarefacInt <- N_Rarefac
+  out <- round(seq(from=Min_Rarefac, to=Max_Rarefac, by=RarefacInt))
+  if (out[length(out)]==Max_Rarefac) {
     return (out)
   } else {
-    out <- c(out, max.rarefac)
+    out <- c(out, Max_Rarefac)
     return (out)
   }
 }
@@ -84,23 +84,23 @@ DivCount <- function(samp) {length(unique(samp))}
 
 ##### A3c. Function to generate the sample diversity values at rarefaction datapoints for fitting ####
 # Inputs: Sample, interval between rarefaction datapoints, minimum data size of subsample, Iterations, maximum data size of subsample 
-GenRarefacDiv <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=length(FormatInput(samp))) {
+GenRarefacDiv <- function(samp, N_Rarefac, Min_Rarefac=1, B, Max_Rarefac=length(FormatInput(samp))) {
   l <- length(samp)
-  rarefac.lengths <- GenRarefacLengths(samp, num.rarefac, max.rarefac, min.rarefac)
-  s <- length(rarefac.lengths)
-  order.vec <- as.vector(apply(matrix(sample(1:(l*B)), nrow=B, ncol=l), 1, order))
-  shuf.mat <- matrix(samp[order.vec], nrow=B, ncol=l, byrow=TRUE)
-  rarefac.div.mean <- rep(1, s)
-  rarefac.div.sd <- rep(0, s)
+  RarefacLengths <- GenRarefacLengths(samp, N_Rarefac, Max_Rarefac, Min_Rarefac)
+  s <- length(RarefacLengths)
+  OrderVec <- as.vector(apply(matrix(sample(1:(l*B)), nrow=B, ncol=l), 1, order))
+  ShuffleMat <- matrix(samp[OrderVec], nrow=B, ncol=l, byrow=TRUE)
+  RarefacDivMean <- rep(1, s)
+  RarefacDivSD <- rep(0, s)
   
   for (i in (2:s)) {
-    temp <- apply(shuf.mat[,1:rarefac.lengths[i]], 1, DivCount)
-    rarefac.div.mean[i] <- mean(temp)
-    rarefac.div.sd[i] <- sd(temp)
+    temp <- apply(ShuffleMat[,1:RarefacLengths[i]], 1, DivCount)
+    RarefacDivMean[i] <- mean(temp)
+    RarefacDivSD[i] <- sd(temp)
   }
-  list(RarefacXAxis=rarefac.lengths, 
-       RarefacYAxis=rarefac.div.mean,
-       div_sd=rarefac.div.sd,
+  list(RarefacXAxis=RarefacLengths, 
+       RarefacYAxis=RarefacDivMean,
+       div_sd=RarefacDivSD,
        NResamples=B)
 }
 
@@ -108,7 +108,7 @@ GenRarefacDiv <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=lengt
 DivSubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
   samp <- FormatInput(mainsamp)
 
-  xyvals <- GenRarefacDiv(samp=samp, num.rarefac=nrf, min.rarefac=minrarefac, B=NResamples, max.rarefac=maxrarefac)
+  xyvals <- GenRarefacDiv(samp=samp, N_Rarefac=nrf, Min_Rarefac=minrarefac, B=NResamples, Max_Rarefac=maxrarefac)
 
   xyvals$call <- match.call()
   class(xyvals) <- "DivSubsamples"
@@ -125,15 +125,15 @@ print.DivSubsamples <- function(x, ...) {
 
 ################ A3f. Summary method: subsample/diversity data ################
 summary.DivSubsamples <- function(object, ...) {
-  tot.div <- object$RarefacYAxis[length(object$RarefacYAxis)]
-  tot.rarefac <- length(object$RarefacXAxis)
-  samp.size <- object$RarefacXAxis[tot.rarefac]
-  num.iter <- object$NResamples
+  TotDiv <- object$RarefacYAxis[length(object$RarefacYAxis)]
+  TotRarefac <- length(object$RarefacXAxis)
+  SampSize <- object$RarefacXAxis[TotRarefac]
+  N_Iter <- object$NResamples
   ave.sdpc <- mean(object$div_sd/object$RarefacYAxis)
-  TAB <- cbind(Subsample.size=samp.size,
-               Subsample.diversity=tot.div,
-               No.of.rarefac.points=tot.rarefac,
-               Iterations=num.iter,
+  TAB <- cbind(Subsample.size=SampSize,
+               Subsample.diversity=TotDiv,
+               No.of.rarefac.points=TotRarefac,
+               Iterations=N_Iter,
                Ave.StdErr=ave.sdpc)
   dss.sum <- list(call=object$call, rsum=TAB)
   class(dss.sum) <- "summary.DivSubsamples"
@@ -151,12 +151,12 @@ print.summary.DivSubsamples <- function(x, ...) {
 ############ A3h. Method to extract the relevant nested subset of a DivSubsamples object ############
 # Inputs: divsubsample object, size of nested subsample desired
 DivSubsamples_Nested <- function(dss, maxsamp) {
-  dss.temp <- dss
-  end.index <- which.min(abs(maxsamp-dss$RarefacXAxis))
-  dss.temp$RarefacXAxis <- dss$RarefacXAxis[1:end.index]
-  dss.temp$RarefacYAxis <- dss$RarefacYAxis[1:end.index]
-  dss.temp$div_sd <- dss$div_sd[1:end.index]
-  return (dss.temp)
+  DSStemp <- dss
+  EndIndex <- which.min(abs(maxsamp-dss$RarefacXAxis))
+  DSStemp$RarefacXAxis <- dss$RarefacXAxis[1:EndIndex]
+  DSStemp$RarefacYAxis <- dss$RarefacYAxis[1:EndIndex]
+  DSStemp$div_sd <- dss$div_sd[1:EndIndex]
+  return (DSStemp)
 }
 
 
@@ -224,13 +224,13 @@ ModelCostAbs <- function(model, params, dss) {
 ####### B1d. Function to convert parameter ranges to vectors #######
 # Input: model.set, Param.ranges (possibly truncated)
 ConvertRanges <- function(model.set, param.ranges) {
-  bounds.lower <- list()
-  bounds.upper <- list()
+  BoundsLower <- list()
+  BoundsUpper <- list()
   for (mod in 1:length(model.set)) {
-    bounds.lower[[names(model.set)[mod]]] = param.ranges[[mod]]["Lower",]
-    bounds.upper[[names(model.set)[mod]]] = param.ranges[[mod]]["Upper",]
+    BoundsLower[[names(model.set)[mod]]] = param.ranges[[mod]]["Lower",]
+    BoundsUpper[[names(model.set)[mod]]] = param.ranges[[mod]]["Upper",]
   }
-  list(lower=bounds.lower, upper=bounds.upper)
+  list(lower=BoundsLower, upper=BoundsUpper)
 }
 
 ####### B1e. Function to perform a global Fit #######
@@ -791,7 +791,6 @@ SingleModScore <- function(fsm, precision.lv = c(0.0001, 0.005, 0.005), plaus.pe
   fit.agg <- sum(fit.scores*samp.wts)
   accuracy.agg <- sum(accuracy.scores*samp.wts)
   similarity.agg <- sum(similarity.scores*samp.wts[2:length(samp.wts)])/sum(samp.wts[2:length(samp.wts)])
-  #monotonic.agg <- sum(plausible.scores*samp.wts)
   plausible.agg <- sum(plausible.scores*samp.wts)
   list(fit=fit.agg, accuracy=accuracy.agg, similarity=similarity.agg, plausibility=plausible.agg,
        binsize=precision.lv, plausibility.penalty=plaus.pen,
@@ -876,7 +875,6 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
     dss.main <- DivSubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=mas.SS[1], NResamples=NResamples)
     mas.dss[[1]] <- dss.main
     for (b in (2:length(mas.SS))) { # Create master list of DivSubsamples
-      #samp <- sample(samp, size=mas.SS[b], replace=FALSE)
       max.ss <- mas.SS[b]
       dss <- DivSubsamples_Nested(dss.main, max.ss)
       mas.dss[[b]] <- dss  
