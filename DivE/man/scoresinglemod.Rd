@@ -1,6 +1,5 @@
 \name{scoresinglemod}
 \alias{scoresinglemod}
-\alias{scoresinglemod.default}
 \alias{print.scoresingleMod}
 \alias{summary.scoresingleMod}
 \alias{print.summary.scoresingleMod}

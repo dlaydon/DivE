@@ -100,8 +100,8 @@ rgeos version: 0.5-1, (SVN revision 614)
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: DiveMaster
 > ### Title: DiveMaster
-> ### Aliases: DiveMaster DiveMaster.default print.DiversityMaster
-> ###   summary.DiversityMaster print.summary.DiversityMaster
+> ### Aliases: DiveMaster print.DiveMaster summary.DiveMaster
+> ###   print.summary.DiveMaster
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -201,10 +201,9 @@ logistic 217       53         36          500
 > 
 > summary(out)
 Call:
-DiveMaster.default(models = testmodels, init.params = testmeta, 
-    param.ranges = paramranges, main.samp = Bact1, numit = 2, 
-    varleft = 10, subsizes = c(65, 40), dssamps = dss, NResamples = 5, 
-    fitloops = 1)
+DiveMaster(models = testmodels, init.params = testmeta, param.ranges = paramranges, 
+    main.samp = Bact1, numit = 2, varleft = 10, subsizes = c(65, 
+        40), dssamps = dss, NResamples = 5, fitloops = 1)
 
 Multiple Model fitting and scoring summary:
   Number_of_models_fitted Best_scoring_model Estimated_global_diversity
@@ -313,7 +312,7 @@ Multiple Model fitting and scoring summary:
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: divsamplenum
 > ### Title: divsamplenum
-> ### Aliases: divsamplenum divsamplenum.default
+> ### Aliases: divsamplenum
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -340,8 +339,8 @@ Multiple Model fitting and scoring summary:
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: divsubsamples
 > ### Title: divsubsamples
-> ### Aliases: divsubsamples divsubsamples.default print.divsubsamples
-> ###   summary.divsubsamples print.summary.divsubsamples
+> ### Aliases: divsubsamples print.divsubsamples summary.divsubsamples
+> ###   print.summary.divsubsamples
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -375,8 +374,8 @@ RarefacYAxis (Mean diversity values):
 > 
 > summary(dss_1)
 Call:
-divsubsamples.default(mainsamp = Bact1, nrf = 2, minrarefac = 1, 
-    maxrarefac = 100, NResamples = 10)
+divsubsamples(mainsamp = Bact1, nrf = 2, minrarefac = 1, maxrarefac = 100, 
+    NResamples = 10)
 
 Subsample data summary:
      Subsample.size Subsample.diversity No.of.rarefac.points Iterations
@@ -411,8 +410,8 @@ Subsample data summary:
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: fitsinglemod
 > ### Title: fitsinglemod
-> ### Aliases: fitsinglemod fitsinglemod.default print.fitsingleMod
-> ###   summary.fitsingleMod print.summary.fitsingleMod plot.fitsingleMod
+> ### Aliases: fitsinglemod print.fitsingleMod summary.fitsingleMod
+> ###   print.summary.fitsingleMod plot.fitsingleMod
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -452,8 +451,8 @@ Subsample data summary:
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: scoresinglemod
 > ### Title: scoresinglemod
-> ### Aliases: scoresinglemod scoresinglemod.default print.scoresingleMod
-> ###   summary.scoresingleMod print.summary.scoresingleMod
+> ### Aliases: scoresinglemod print.scoresingleMod summary.scoresingleMod
+> ###   print.summary.scoresingleMod
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -506,7 +505,7 @@ Scoring results ($[colnames]):
 logistic         217       53         36          500
 > summary(ssm)
 Call:
-scoresinglemod.default(fsm = fsm)
+scoresinglemod(fsm = fsm)
 
 Single model scoring setup summary:
      Model.name precision.fit precision.accuracy precision.similarity
@@ -523,7 +522,7 @@ Single model scoring setup summary:
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.16 0.59 6.94 NA NA 
+Time elapsed:  6.38 0.5 7.16 NA NA 
 > grDevices::dev.off()
 null device 
           1 

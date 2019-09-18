@@ -1,6 +1,5 @@
 \name{fitsinglemod}
 \alias{fitsinglemod}
-\alias{fitsinglemod.default}
 \alias{print.fitsingleMod}
 \alias{summary.fitsingleMod}
 \alias{print.summary.fitsingleMod}

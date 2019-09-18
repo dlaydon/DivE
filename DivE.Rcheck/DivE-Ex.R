@@ -70,8 +70,8 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: DiveMaster
 ### Title: DiveMaster
-### Aliases: DiveMaster DiveMaster.default print.DiversityMaster
-###   summary.DiversityMaster print.summary.DiversityMaster
+### Aliases: DiveMaster print.DiveMaster summary.DiveMaster
+###   print.summary.DiveMaster
 ### Keywords: diversity
 
 ### ** Examples
@@ -217,7 +217,7 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: divsamplenum
 ### Title: divsamplenum
-### Aliases: divsamplenum divsamplenum.default
+### Aliases: divsamplenum
 ### Keywords: diversity
 
 ### ** Examples
@@ -242,8 +242,8 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: divsubsamples
 ### Title: divsubsamples
-### Aliases: divsubsamples divsubsamples.default print.divsubsamples
-###   summary.divsubsamples print.summary.divsubsamples
+### Aliases: divsubsamples print.divsubsamples summary.divsubsamples
+###   print.summary.divsubsamples
 ### Keywords: diversity
 
 ### ** Examples
@@ -279,8 +279,8 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: fitsinglemod
 ### Title: fitsinglemod
-### Aliases: fitsinglemod fitsinglemod.default print.fitsingleMod
-###   summary.fitsingleMod print.summary.fitsingleMod plot.fitsingleMod
+### Aliases: fitsinglemod print.fitsingleMod summary.fitsingleMod
+###   print.summary.fitsingleMod plot.fitsingleMod
 ### Keywords: diversity
 
 ### ** Examples
@@ -320,8 +320,8 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: scoresinglemod
 ### Title: scoresinglemod
-### Aliases: scoresinglemod scoresinglemod.default print.scoresingleMod
-###   summary.scoresingleMod print.summary.scoresingleMod
+### Aliases: scoresinglemod print.scoresingleMod summary.scoresingleMod
+###   print.summary.scoresingleMod
 ### Keywords: diversity
 
 ### ** Examples

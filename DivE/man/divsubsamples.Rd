@@ -1,6 +1,5 @@
 \name{divsubsamples}
 \alias{divsubsamples}
-\alias{divsubsamples.default}
 \alias{print.divsubsamples}
 \alias{summary.divsubsamples}
 \alias{print.summary.divsubsamples}

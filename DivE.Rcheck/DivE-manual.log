@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  17 SEP 2019 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  18 SEP 2019 12:41
 entering extended mode
-**C:/Users/dlaydon/AppData/Local/Temp/RtmpKcnB0m/Rd2pdf507c419e492c/Rd2.tex
-(C:/Users/dlaydon/AppData/Local/Temp/RtmpKcnB0m/Rd2pdf507c419e492c/Rd2.tex
+**C:/Users/dlaydon/AppData/Local/Temp/Rtmpw7U17K/Rd2pdf5fe012dd7e11/Rd2.tex
+(C:/Users/dlaydon/AppData/Local/Temp/Rtmpw7U17K/Rd2pdf5fe012dd7e11/Rd2.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book.cls"
@@ -496,9 +496,15 @@ File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 10.0pt on input line 21.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 23.
+
+("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd
+"
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 30.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 30.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 28.
 
 ("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -519,226 +525,226 @@ File: utf8.def 2018/10/05 v1.2f UTF-8 support for inputenc
 
 
 {C:/Users/dlaydon/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (41.44608pt too wide) in paragraph at lines 45--46
+Overfull \hbox (41.44608pt too wide) in paragraph at lines 43--44
 \T1/ptm/m/n/10 func-tions make ex-ten-sive use of the R-package \T1/ptm/m/it/10
  FME \T1/ptm/m/n/10 (http://cran.r-project.org/web/packages/FME/index.html) 
  []
 
 [2] [3]
-Overfull \hbox (1.70712pt too wide) in paragraph at lines 105--106
+Overfull \hbox (1.70712pt too wide) in paragraph at lines 103--104
 []\T1/ptm/m/n/10 Daniel J. Lay-don, Sec-tion of Im-munol-ogy, Di-vi-sion of In-
 fec-tious Dis-eases, De-part-ment of Medicine,
  []
 
 
-Overfull \hbox (49.55008pt too wide) in paragraph at lines 148--149
+Overfull \hbox (49.55008pt too wide) in paragraph at lines 146--147
 []\T1/ptm/m/n/10 a fac-tor with lev-els \T1/zi4/m/n/10 Acetobacter_aurantius Ac
 inetobacter_baumannii Actinomyces_israelii
  []
 
 
-Overfull \hbox (47.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (47.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Agrobacterium_radiobacter Agrobacterium_tumefaciens Anaplasma Az
 orhizobium_caulinodans
  []
 
 
-Overfull \hbox (79.38098pt too wide) in paragraph at lines 148--149
+Overfull \hbox (79.38098pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Azotobacter_vinelandii Bacillus_anthracis Bacillus_brevis Bacill
 us_cereus Bacillus_fusiformis
  []
 
 
-Overfull \hbox (57.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (57.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Bacillus_licheniformis Bacillus_megaterium Bacillus_mycoides Bac
 illus_stearothermophilus
  []
 
 
-Overfull \hbox (62.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (62.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Bacillus_subtilis Bacteroides_fragilis Bacteroides_gingivalis Ba
 cteroides_melaninogenicus
  []
 
 
-Overfull \hbox (47.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (47.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Bartonella_henselae Bartonella_quintana Bordetella_bronchiseptic
 a Bordetella_pertussis
  []
 
 
-Overfull \hbox (74.38098pt too wide) in paragraph at lines 148--149
+Overfull \hbox (74.38098pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Borrelia_burgdorferi Brucella_abortus Brucella_melitensis Brucel
 la_suis Burkholderia_cepacia
  []
 
 
-Overfull \hbox (5.58093pt too wide) in paragraph at lines 148--149
+Overfull \hbox (5.58093pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Burkholderia_mallei Burkholderia_pseudomallei Calymmatobacterium
 _granulomatis
  []
 
 
-Overfull \hbox (17.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (17.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Campylobacter_coli Campylobacter_fetus Campylobacter_jejuni Camp
 ylobacter_pylori
  []
 
 
-Overfull \hbox (72.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (72.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Chlamydia_trachomatis Chlamydophila_pneumoniae Chlamydophila_psi
 ttaci Clostridium_botulinum
  []
 
 
-Overfull \hbox (77.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (77.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Clostridium_difficile Clostridium_perfringens Clostridium_tetani
  Corynebacterium_diphtheriae
  []
 
 
-Overfull \hbox (47.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (47.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Corynebacterium_fusiforme Coxiella_burnetii Ehrlichia_chaffeensi
 s Enterobacter_cloacae
  []
 
 
-Overfull \hbox (22.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (22.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Enterococcus_avium Enterococcus_durans Enterococcus_faecalis Ent
 erococcus_faecium
  []
 
 
-Overfull \hbox (82.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (82.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Haemophilus_influenzae Haemophilus_parainfluenzae Haemophilus_pe
 rtussis Haemophilus_vaginalis
  []
 
 
-Overfull \hbox (77.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (77.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Helicobacter_pylori Klebsiella_pneumoniae Lactobacillus_Bulgaric
 us Lactobacillus_acidophilus
  []
 
 
-Overfull \hbox (37.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (37.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Lactobacillus_casei Lactococcus_lactis Legionella_pneumophila Li
 steria_monocytogenes
  []
 
 
-Overfull \hbox (87.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (87.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Methanobacterium_extroquens Microbacterium_multiforme Micrococcu
 s_luteus Moraxella_catarrhalis
  []
 
 
-Overfull \hbox (12.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (12.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Mycobacterium Mycobacterium_avium Mycobacterium_bovis Mycobacter
 ium_diphtheriae
  []
 
 
-Overfull \hbox (0.58093pt too wide) in paragraph at lines 148--149
+Overfull \hbox (0.58093pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Mycobacterium_intracellulare Mycobacterium_leprae Mycobacterium_
 lepraemurium
  []
 
 
-Overfull \hbox (77.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (77.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Mycobacterium_phlei Mycobacterium_smegmatis Mycobacterium_tuberc
 ulosis Mycoplasma_fermentans
  []
 
 
-Overfull \hbox (32.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (32.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Mycoplasma_genitalium Mycoplasma_hominis Mycoplasma_penetrans My
 coplasma_pneumoniae
  []
 
 
-Overfull \hbox (62.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (62.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Neisseria_gonorrhoeae Neisseria_meningitidis Pasteurella_multoci
 da Pasteurella_tularensis
  []
 
 
-Overfull \hbox (57.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (57.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Peptostreptococcus Porphyromonas_gingivalis Pseudomonas_aerugino
 sa Rhizobium_radiobacter
  []
 
 
-Overfull \hbox (32.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (32.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Rickettsia_prowazekii Rickettsia_psittaci Rickettsia_quintana Ri
 ckettsia_rickettsii
  []
 
 
-Overfull \hbox (84.38098pt too wide) in paragraph at lines 148--149
+Overfull \hbox (84.38098pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Rickettsia_trachomae Rochalimaea Rochalimaea_henselae Rochalimae
 a_quintana Rothia_dentocariosa
  []
 
 
-Overfull \hbox (27.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (27.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Salmonella_enteritidis Salmonella_typhi Salmonella_typhimurium S
 erratia_marcescens
  []
 
 
-Overfull \hbox (107.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (107.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Shigella_dysenteriae Staphylococcus_aureus Staphylococcus_epider
 midis Stenotrophomonas_maltophilia
  []
 
 
-Overfull \hbox (52.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (52.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Streptococcus_agalactiae Streptococcus_avium Streptococcus_bovis
  Streptococcus_cricetus
  []
 
 
-Overfull \hbox (62.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (62.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Streptococcus_faceium Streptococcus_faecalis Streptococcus_ferus
  Streptococcus_gallinarum
  []
 
 
-Overfull \hbox (27.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (27.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Streptococcus_lactis Streptococcus_mitior Streptococcus_mitis St
 reptococcus_mutans
  []
 
 
-Overfull \hbox (62.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (62.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Streptococcus_oralis Streptococcus_pneumoniae Streptococcus_pyog
 enes Streptococcus_rattus
  []
 
 
-Overfull \hbox (62.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (62.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Streptococcus_salivarius Streptococcus_sanguis Streptococcus_sob
 rinus Treponema_denticola
  []
 
 
-Overfull \hbox (59.38098pt too wide) in paragraph at lines 148--149
+Overfull \hbox (59.38098pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Treponema_pallidum Vibrio_cholerae Vibrio_comma Vibrio_parahaemo
 lyticus Vibrio_vulnificus
  []
 
 
-Overfull \hbox (2.48096pt too wide) in paragraph at lines 148--149
+Overfull \hbox (2.48096pt too wide) in paragraph at lines 146--147
 \T1/zi4/m/n/10 Wolbachia Yersinia_enterocolitica Yersinia_pestis Yersinia_pseud
 otuberculosis 
  []
 
 [4]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 160.
+(Font)              scaled to size 9.0pt on input line 158.
  [5] [6] [7]
-Overfull \hbox (50.7762pt too wide) in paragraph at lines 341--342
+Overfull \hbox (50.7762pt too wide) in paragraph at lines 338--339
 []\T1/ptm/m/n/10 list of mod-els; each model is writ-ten as a func-tion: func-t
 ion(x, params) { with(as.list(params),
  []
@@ -748,21 +754,21 @@ it}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.367 \item[\code{nrf}]
+l.364 \item[\code{nrf}]
                        ] [9]
-Overfull \hbox (26.25941pt too wide) in paragraph at lines 447--447
+Overfull \hbox (26.25941pt too wide) in paragraph at lines 444--444
  []\T1/zi4/m/n/9 testmeta[[1]] <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1
 .0147441, 0.009543598, 0.9870419),[] 
  []
 
 
-Overfull \hbox (6.68274pt too wide) in paragraph at lines 448--448
+Overfull \hbox (6.68274pt too wide) in paragraph at lines 445--445
  []                        \T1/zi4/m/n/9 nrow=2, byrow=TRUE, dimnames=list(c(),
  c("a1", "a2", "a3"))) # Example seeds[] 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 474.
+LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 471.
 
 
 ("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/inconsolata\ts1z
@@ -770,27 +776,27 @@ i4.fd"
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 474.
+(Font)              scaled to size 9.0pt on input line 471.
  [11]
-Overfull \hbox (5.66774pt too wide) in paragraph at lines 572--573
+Overfull \hbox (5.66774pt too wide) in paragraph at lines 567--568
 []\T1/ptm/m/n/10 maximum rar-efac-tion data x-axis value. De-fault is length of
  the sam-ple \T1/zi4/m/n/10 mainsamp\T1/ptm/m/n/10 . 
  []
 
 [12] [13] [14] [15]
-Overfull \hbox (3.68637pt too wide) in paragraph at lines 771--772
+Overfull \hbox (3.68637pt too wide) in paragraph at lines 765--766
 []\T1/ptm/m/n/10 Each model is writ-ten as a func-tion: func-tion(x, params) wi
 th(as.list(params), <\T1/ptm/m/it/10 func-tion of params\T1/ptm/m/n/10 >).
  []
 
 [16] [17] [18] [19]
-Overfull \hbox (3.75941pt too wide) in paragraph at lines 986--986
+Overfull \hbox (3.75941pt too wide) in paragraph at lines 979--979
  []\T1/zi4/m/n/9 testmeta <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147
 441, 0.009543598, 0.9870419),[] 
  []
 
 
-Overfull \hbox (6.68274pt too wide) in paragraph at lines 987--987
+Overfull \hbox (6.68274pt too wide) in paragraph at lines 980--980
  []                        \T1/zi4/m/n/9 nrow=2, byrow=TRUE, dimnames=list(c(),
  c("a1", "a2", "a3"))) # Example seeds[] 
  []
@@ -810,11 +816,11 @@ LaTeX Font Info:    Font shape `T1/zi4/m/it' will be
 ] [23
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1010.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1010.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
  (Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1010.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1010.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
 
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: 21E967E72AED0A35607ED6F64AE98DF3;815.
@@ -822,16 +828,16 @@ Package rerunfilecheck Info: File `Rd2.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1010.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
  ) 
 Here is how much of TeX's memory you used:
- 6514 strings out of 492895
- 96705 string characters out of 3122801
+ 6531 strings out of 492895
+ 96935 string characters out of 3122801
  180431 words of memory out of 3000000
- 10130 multiletter control sequences out of 15000+200000
- 40981 words of font info for 50 fonts, out of 3000000 for 9000
+ 10148 multiletter control sequences out of 15000+200000
+ 41295 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,6n,36p,4406b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,5n,36p,4406b,592s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Rfn.modFit} has been referenced but does not exis
 t, replaced by a fixed one
 
@@ -850,9 +856,9 @@ s/cm/cmsy10.pfb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 ograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (23 pages, 221464 bytes).
+Output written on Rd2.pdf (23 pages, 220685 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 206 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 201 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

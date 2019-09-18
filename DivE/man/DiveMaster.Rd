@@ -1,9 +1,8 @@
 \name{DiveMaster}
 \alias{DiveMaster}
-\alias{DiveMaster.default}
-\alias{print.DiversityMaster}
-\alias{summary.DiversityMaster}
-\alias{print.summary.DiversityMaster}
+\alias{print.DiveMaster}
+\alias{summary.DiveMaster}
+\alias{print.summary.DiveMaster}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 DiveMaster

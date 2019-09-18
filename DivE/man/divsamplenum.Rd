@@ -1,6 +1,5 @@
 \name{divsamplenum}
 \alias{divsamplenum}
-\alias{divsamplenum.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 divsamplenum
