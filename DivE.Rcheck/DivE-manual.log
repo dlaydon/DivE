@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  18 SEP 2019 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.9.17)  18 SEP 2019 16:45
 entering extended mode
-**C:/Users/dlaydon/AppData/Local/Temp/Rtmp25JKZN/Rd2pdf5c80721f5d2b/Rd2.tex
-(C:/Users/dlaydon/AppData/Local/Temp/Rtmp25JKZN/Rd2pdf5c80721f5d2b/Rd2.tex
+**C:/Users/dlaydon/AppData/Local/Temp/Rtmp0gi0ZY/Rd2pdf5cd811f271a9/Rd2.tex
+(C:/Users/dlaydon/AppData/Local/Temp/Rtmp0gi0ZY/Rd2pdf5cd811f271a9/Rd2.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\dlaydon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\book.cls"
@@ -813,7 +813,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 965.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 965.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 965.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
-(rerunfilecheck)             Checksum: 0B7AD0D291F9839FC5959DACE4ECC437;747.
+(rerunfilecheck)             Checksum: 7C9AEEAADC150EA2B52A8411662445BA;747.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -823,7 +823,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 965.
 Here is how much of TeX's memory you used:
  6495 strings out of 492895
  96354 string characters out of 3122801
- 180431 words of memory out of 3000000
+ 179431 words of memory out of 3000000
  10147 multiletter control sequences out of 15000+200000
  41295 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -846,7 +846,7 @@ s/cm/cmsy10.pfb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 ograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/dlaydon/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (22 pages, 208431 bytes).
+Output written on Rd2.pdf (22 pages, 207965 bytes).
 PDF statistics:
  440 PDF objects out of 1000 (max. 8388607)
  166 named destinations out of 1000 (max. 500000)

@@ -54,12 +54,12 @@ result <- DiveMaster(models=testmodels, init.params=testmeta, param.ranges = par
 # Again, with two samples (Main sample + one subset)
 
 ###########################################
-### 4.1 create rarefaction data (divsubsamples object)
+### 4.1 create rarefaction data (DivSubsamples object)
 ###########################################
 
 Bact1length = sum(Bact1$Count)
-dss_1 	<- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=0.5*Bact1length	, NResamples=30)
-dss_2 	<- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=Bact1length		, NResamples=30)
+dss_1 	<- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=0.5*Bact1length	, NResamples=30)
+dss_2 	<- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=Bact1length		, NResamples=30)
 dss 	<- list(dss_2, dss_1)
 
 ###########################################
@@ -68,7 +68,7 @@ dss 	<- list(dss_2, dss_1)
 fmm 		<- list()	## list of fitted model data
 for (i in 1:length(Mods)) 
 {
-	fsm.temp <- fitsinglemod(model.list = testmodels[i]	, init.param = testmeta[[i]],  
+	fsm.temp <- FitSingleMod(model.list = testmodels[i]	, init.param = testmeta[[i]],  
 			
 			param.range = paramranges[[i]], 
 			numit 		= 10^2, 
@@ -167,8 +167,8 @@ popdiversity(result, 10^6)	## calculate diversity at another population size.
 ?DivE # Package summary
 
 # Component functions
-?divsubsamples
-?fitsinglemod
+?DivSubsamples
+?FitSingleMod
 ?scoresinglemod
 
 

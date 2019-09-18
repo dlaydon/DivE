@@ -1,17 +1,17 @@
-\name{divsubsamples}
-\alias{divsubsamples}
-\alias{print.divsubsamples}
-\alias{summary.divsubsamples}
-\alias{print.summary.divsubsamples}
+\name{DivSubsamples}
+\alias{DivSubsamples}
+\alias{print.DivSubsamples}
+\alias{summary.DivSubsamples}
+\alias{print.summary.DivSubsamples}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-divsubsamples
+DivSubsamples
 }
 \description{
 Function to generate the rarefaction data from a given sample
 }
 \usage{
-divsubsamples(mainsamp, nrf, minrarefac=1,
+DivSubsamples(mainsamp, nrf, minrarefac=1,
 maxrarefac=length(FormatInput(mainsamp)), NResamples=1000)
 }
 
@@ -37,7 +37,7 @@ maxrarefac=length(FormatInput(mainsamp)), NResamples=1000)
 This function produces a vector of subsamples diversity values with subsample lengths evenly distributed between a specified minimum and maximum number. The curvature of the rarefaction curve can be obtained with the function \code{Curvature}.
 }
 \value{
-a list of class \emph{divsubsamples} containing resampling results (i.e. the diversity data). This includes the following:
+a list of class \emph{DivSubsamples} containing resampling results (i.e. the diversity data). This includes the following:
 
   \item{RarefacXAxis }{vector of x-axis rarefaction data}
   \item{RarefacYAxis }{vector of y-axis rarefaction data}
@@ -56,9 +56,9 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 require(DivE)
 data(Bact1)
 
-dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=100,
+dss_1 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=100,
                         NResamples=10) 
-dss_2 <- divsubsamples(Bact1, nrf=20, minrarefac=1, maxrarefac=100,
+dss_2 <- DivSubsamples(Bact1, nrf=20, minrarefac=1, maxrarefac=100,
                         NResamples=10)
 # Default NResamples=1000; low value of NResamples=10 is a set for quick evaluation
 

@@ -46,16 +46,16 @@ DiveMaster(models, init.params, param.ranges, main.samp,
   either number of nested subsamples (integer, must be 2 or greater), or a vector of nested sample lengths. If the former, then the vector of sample lengths will be created using the \emph{DivSampleNum} function.
 }
   \item{dssamps}{
-  list of user specified rarefaction data \emph{divsubsamples} objects. The length of each component vector of each object in the list must correspond to the vector of nested sample lengths (as defined by the user in \code{subsizes}).
+  list of user specified rarefaction data \emph{DivSubsamples} objects. The length of each component vector of each object in the list must correspond to the vector of nested sample lengths (as defined by the user in \code{subsizes}).
 }
   \item{nrf}{
   difference between lengths of successive rarefaction datapoints.
 }
   \item{minrarefac}{
-  minimum rarefaction x-axis value. This argument is not used if list of \emph{divsubsamples} object is specified in \code{dssamps}.
+  minimum rarefaction x-axis value. This argument is not used if list of \emph{DivSubsamples} object is specified in \code{dssamps}.
 }
   \item{NResamples}{
-  number of resamples used to calculate the rarefaction data. This parameter is not used if list of \emph{divsubsamples} object is specified in \code{dssamps}.
+  number of resamples used to calculate the rarefaction data. This parameter is not used if list of \emph{DivSubsamples} object is specified in \code{dssamps}.
 }
   \item{minplaus}{
   lower x-axis bound for plausibility check.
@@ -106,7 +106,7 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link[DivE]{fitsinglemod}}, \code{\link[DivE]{scoresinglemod}}
+\code{\link[DivE]{FitSingleMod}}, \code{\link[DivE]{scoresinglemod}}
 }
 \examples{
 require(DivE)
@@ -127,9 +127,9 @@ testmeta[[1]] <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543
 paramranges[[1]] <- ParamRanges[[1]]
 
 
-# Create divsubsamples object (NB: For quick illustration only -- not default parameters)
-dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
-dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
+# Create DivSubsamples object (NB: For quick illustration only -- not default parameters)
+dss_1 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
+dss_2 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
 dss <- list(dss_2, dss_1)
 
 # Implement the function (NB: For quick illustration only -- not default parameters)

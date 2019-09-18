@@ -10,4 +10,4 @@ Description: Contains functions for the 'DivE' estimator <https://doi.org/10.137
 License: GPL (>= 2)
 LazyData: TRUE
 NeedsCompilation: no
-Packaged: 2019-09-18 13:35:33 UTC; dlaydon
+Packaged: 2019-09-18 15:44:05 UTC; dlaydon

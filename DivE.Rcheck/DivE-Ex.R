@@ -75,7 +75,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-# See divsubsamples documentation for examples.
+# See DivSubsamples documentation for examples.
 
 
 
@@ -106,6 +106,43 @@ DivSampleNum(Bact1, 6)
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("DivSampleNum", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("DivSubsamples")
+### * DivSubsamples
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: DivSubsamples
+### Title: DivSubsamples
+### Aliases: DivSubsamples print.DivSubsamples summary.DivSubsamples
+###   print.summary.DivSubsamples
+### Keywords: diversity
+
+### ** Examples
+
+require(DivE)
+data(Bact1)
+
+dss_1 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=100,
+                        NResamples=10) 
+dss_2 <- DivSubsamples(Bact1, nrf=20, minrarefac=1, maxrarefac=100,
+                        NResamples=10)
+# Default NResamples=1000; low value of NResamples=10 is a set for quick evaluation
+
+dss_1
+dss_2
+
+summary(dss_1)
+dss_1$div_sd
+dss_1$NResamples
+
+Curvature(dss_1)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("DivSubsamples", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("DiveMaster")
 ### * DiveMaster
@@ -139,9 +176,9 @@ testmeta[[1]] <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543
 paramranges[[1]] <- ParamRanges[[1]]
 
 
-# Create divsubsamples object (NB: For quick illustration only -- not default parameters)
-dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
-dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
+# Create DivSubsamples object (NB: For quick illustration only -- not default parameters)
+dss_1 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
+dss_2 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
 dss <- list(dss_2, dss_1)
 
 # Implement the function (NB: For quick illustration only -- not default parameters)
@@ -172,6 +209,27 @@ summary(out)
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("DiveMaster", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("FitSingleMod")
+### * FitSingleMod
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: FitSingleMod
+### Title: FitSingleMod
+### Aliases: FitSingleMod print.fitsingleMod summary.fitsingleMod
+###   print.summary.fitsingleMod plot.fitsingleMod
+### Keywords: diversity
+
+### ** Examples
+
+# See documentation of \code{scoresinglemod} for examples
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("FitSingleMod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("ModelSet")
 ### * ModelSet
@@ -234,64 +292,6 @@ data(ParamSeeds)
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("ParamSeeds", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
-nameEx("divsubsamples")
-### * divsubsamples
-
-flush(stderr()); flush(stdout())
-
-base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: divsubsamples
-### Title: divsubsamples
-### Aliases: divsubsamples print.divsubsamples summary.divsubsamples
-###   print.summary.divsubsamples
-### Keywords: diversity
-
-### ** Examples
-
-require(DivE)
-data(Bact1)
-
-dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=100,
-                        NResamples=10) 
-dss_2 <- divsubsamples(Bact1, nrf=20, minrarefac=1, maxrarefac=100,
-                        NResamples=10)
-# Default NResamples=1000; low value of NResamples=10 is a set for quick evaluation
-
-dss_1
-dss_2
-
-summary(dss_1)
-dss_1$div_sd
-dss_1$NResamples
-
-Curvature(dss_1)
-
-
-
-base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("divsubsamples", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
-cleanEx()
-nameEx("fitsinglemod")
-### * fitsinglemod
-
-flush(stderr()); flush(stdout())
-
-base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: fitsinglemod
-### Title: fitsinglemod
-### Aliases: fitsinglemod print.fitsingleMod summary.fitsingleMod
-###   print.summary.fitsingleMod plot.fitsingleMod
-### Keywords: diversity
-
-### ** Examples
-
-# See documentation of \code{scoresinglemod} for examples
-
-
-
-base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("fitsinglemod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
-cleanEx()
 nameEx("popdiversity")
 ### * popdiversity
 
@@ -344,13 +344,13 @@ testmeta <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147441, 0.009543598, 
                         nrow=2, byrow=TRUE, dimnames=list(c(), c("a1", "a2", "a3"))) # Example seeds
 paramranges <- ParamRanges[[1]]
 
-# Create divsubsamples object (NB: For quick illustration only -- not default parameters)
-dss_1 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
-dss_2 <- divsubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
+# Create DivSubsamples object (NB: For quick illustration only -- not default parameters)
+dss_1 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=40, NResamples=5)
+dss_2 <- DivSubsamples(Bact1, nrf=2, minrarefac=1, maxrarefac=65, NResamples=5)
 dss <- list(dss_2, dss_1)
 
 # Fit the model (NB: For quick illustration only -- not default parameters)
-fsm <- fitsinglemod(model.list=testmodels, init.param=testmeta, param.range=paramranges,
+fsm <- FitSingleMod(model.list=testmodels, init.param=testmeta, param.range=paramranges,
                     main.samp=Bact1, dssamps=dss, fitloops=1, data.default=FALSE,
                     subsizes=c(65, 40), 
                     numit=2) # numit chosen to be extremely small to speed up example

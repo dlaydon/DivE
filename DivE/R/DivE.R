@@ -105,18 +105,18 @@ GenRarefacDiv <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=lengt
 }
 
 ############# A3d. Generate subsamples/diversity function #############
-divsubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
+DivSubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
   samp <- FormatInput(mainsamp)
 
   xyvals <- GenRarefacDiv(samp=samp, num.rarefac=nrf, min.rarefac=minrarefac, B=NResamples, max.rarefac=maxrarefac)
 
   xyvals$call <- match.call()
-  class(xyvals) <- "divsubsamples"
+  class(xyvals) <- "DivSubsamples"
   xyvals
 }
 
 ################ A3e. Print method -  subsample/diversity data ################
-print.divsubsamples <- function(x, ...) {
+print.DivSubsamples <- function(x, ...) {
   cat("RarefacXAxis:\n")
   print(x$RarefacXAxis)
   cat("\nRarefacYAxis (Mean diversity values):\n")
@@ -124,7 +124,7 @@ print.divsubsamples <- function(x, ...) {
 }
 
 ################ A3f. Summary method: subsample/diversity data ################
-summary.divsubsamples <- function(object, ...) {
+summary.DivSubsamples <- function(object, ...) {
   tot.div <- object$RarefacYAxis[length(object$RarefacYAxis)]
   tot.rarefac <- length(object$RarefacXAxis)
   samp.size <- object$RarefacXAxis[tot.rarefac]
@@ -135,23 +135,22 @@ summary.divsubsamples <- function(object, ...) {
                No.of.rarefac.points=tot.rarefac,
                Iterations=num.iter,
                Ave.StdErr=ave.sdpc)
-  dss.sum <- list(call=object$call,
-              rsum=TAB)
-  class(dss.sum) <- "summary.divsubsamples"
+  dss.sum <- list(call=object$call, rsum=TAB)
+  class(dss.sum) <- "summary.DivSubsamples"
   dss.sum
 }
 
 ############ A3g. Print summary method -  subsample/diversity data ############
-print.summary.divsubsamples <- function(x, ...) {
+print.summary.DivSubsamples <- function(x, ...) {
   cat("Call:\n")
   print(x$call)
   cat("\nSubsample data summary:\n")
   print(x$rsum)
 }
 
-############ A3h. Method to extract the relevant nested subset of a divsubsamples object ############
+############ A3h. Method to extract the relevant nested subset of a DivSubsamples object ############
 # Inputs: divsubsample object, size of nested subsample desired
-divsubsamples_nested <- function(dss, maxsamp) {
+DivSubsamples_Nested <- function(dss, maxsamp) {
   dss.temp <- dss
   end.index <- which.min(abs(maxsamp-dss$RarefacXAxis))
   dss.temp$RarefacXAxis <- dss$RarefacXAxis[1:end.index]
@@ -164,7 +163,7 @@ divsubsamples_nested <- function(dss, maxsamp) {
 ############ A4a. Method to calculate the curvature of a rarefaction curve ############
 # Inputs: divsubsample object
 Curvature <- function(dss) {
-  if ((length(dss) > 1) && (class(dss[[1]])=="divsubsamples")) {
+  if ((length(dss) > 1) && (class(dss[[1]])=="DivSubsamples")) {
     SubSizes = c()
     for (Sub in 1:length(dss)) {
       SubSizes[Sub] = tail(dss[[Sub]]$RarefacXAxis,1)
@@ -207,7 +206,7 @@ PredDiv <- function(model, rarefac, params) {
 }
 
 ####### B1b. Function to calculate the residuals (modCost) #######
-# Input: Model id, model parameters, divsubsamples object
+# Input: Model id, model parameters, DivSubsamples object
 ModelCost <- function(model, params, dss) {
   xypred <- PredDiv(model, dss$RarefacXAxis, params)
   xyactual <- data.frame(RarefacXAxis=dss$RarefacXAxis, RarefacYAxis=dss$RarefacYAxis)
@@ -215,7 +214,7 @@ ModelCost <- function(model, params, dss) {
 }
 
 ####### B1c. Function to calculate the discrepancy as the mean of pointwise percentage error #######
-# Input: Model id, model parameters, divsubsamples object
+# Input: Model id, model parameters, DivSubsamples object
 ModelCostAbs <- function(model, params, dss) {
   ypred <- PredDiv(model, dss$RarefacXAxis, params)$RarefacYAxis
   yactual <- dss$RarefacYAxis
@@ -538,7 +537,7 @@ FitAllSubs <- function(SS, model.list, init.param, param.range, dSS, numit, varl
 
 
 ####### B3a. Fit single model function #######
-fitsinglemod <- function(model.list, init.param, param.range, main.samp, tot.pop=(100*(DivSampleNum(main.samp,2)[1])),
+FitSingleMod <- function(model.list, init.param, param.range, main.samp, tot.pop=(100*(DivSampleNum(main.samp,2)[1])),
 		numit=10^5, varleft=1e-8, data.default=TRUE, subsizes=6, dssamps=list(),
 		nrf=1, minrarefac=1, NResamples=1000, minplaus=10, fitloops=2) { 
   
@@ -551,12 +550,12 @@ fitsinglemod <- function(model.list, init.param, param.range, main.samp, tot.pop
     samp <- v1
     dSS <- list()
     
-    main.dss <- divsubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=SS[1])
+    main.dss <- DivSubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=SS[1])
 
     dSS[[1]] <- main.dss
     for (b in (2:length(SS))) {
       max.ss <- SS[b]
-      dss_temp <- divsubsamples_nested(main.dss, max.ss)
+      dss_temp <- DivSubsamples_Nested(main.dss, max.ss)
       dSS[[b]] <- dss_temp
     }
   } else {
@@ -874,12 +873,12 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
     mas.SS <- DivSampleNum(main.samp, subsizes) # Create master vector of 3 samples sizes
     samp <- FormatInput(main.samp) # Format main sample
     
-    dss.main <- divsubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=mas.SS[1], NResamples=NResamples)
+    dss.main <- DivSubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=mas.SS[1], NResamples=NResamples)
     mas.dss[[1]] <- dss.main
-    for (b in (2:length(mas.SS))) { # Create master list of divsubsamples
+    for (b in (2:length(mas.SS))) { # Create master list of DivSubsamples
       #samp <- sample(samp, size=mas.SS[b], replace=FALSE)
       max.ss <- mas.SS[b]
-      dss <- divsubsamples_nested(dss.main, max.ss)
+      dss <- DivSubsamples_Nested(dss.main, max.ss)
       mas.dss[[b]] <- dss  
     }
   } else {
@@ -896,7 +895,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
   for (i in (1:num.mod)) {
     # Fit model
     cat("Fitting model", i, "of", length(models),"(Est. time remaining:", timeremain, "mins)", "\n")
-    fsm.temp <- fitsinglemod(model.list=models[i], init.param=init.params[[i]], param.range=param.ranges[[i]],
+    fsm.temp <- FitSingleMod(model.list=models[i], init.param=init.params[[i]], param.range=param.ranges[[i]],
                              main.samp, data.default=FALSE, tot.pop= tot.pop, numit=numit, varleft=varleft,
                              subsizes=mas.SS, dssamps=mas.dss, nrf=nrf, minrarefac=minrarefac, NResamples=NResamples,
                              minplaus=minplaus, fitloops=fitloops)

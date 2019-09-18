@@ -1,5 +1,5 @@
-\name{fitsinglemod}
-\alias{fitsinglemod}
+\name{FitSingleMod}
+\alias{FitSingleMod}
 \alias{print.fitsingleMod}
 \alias{summary.fitsingleMod}
 \alias{print.summary.fitsingleMod}
@@ -7,14 +7,14 @@
 
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-fitsinglemod
+FitSingleMod
 }
 \description{
 Function to fit a model to the diversity values of subsamples of a given sample and its nested samples.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-fitsinglemod(model.list, init.param, param.range,
+FitSingleMod(model.list, init.param, param.range,
              main.samp, tot.pop=(100*(DivSampleNum(main.samp,2)[1])),
              numit=10^5, varleft=1e-8, data.default=TRUE,
              subsizes = 6, dssamps = list(), nrf = 1,
@@ -53,16 +53,16 @@ fitsinglemod(model.list, init.param, param.range,
 
 }
   \item{dssamps}{
-  list of user specified rarefaction data \emph{divsubsamples} objects. The length of each component vector of each object in the list must correspond to the vector of subsample lengths (as defined by the user in \code{subsizes}).
+  list of user specified rarefaction data \emph{DivSubsamples} objects. The length of each component vector of each object in the list must correspond to the vector of subsample lengths (as defined by the user in \code{subsizes}).
 }
   \item{nrf}{
   difference between lengths of successive rarefaction datapoints.
 }
   \item{minrarefac}{
-  minimum rarefaction x-axis value. This argument is not used if list of \emph{divsubsamples} object is specified in \emph{dssamps}.
+  minimum rarefaction x-axis value. This argument is not used if list of \emph{DivSubsamples} object is specified in \emph{dssamps}.
 }
   \item{NResamples}{
-  number of resamples used to calculate the rarefaction data. This parameter is not used if list of \emph{divsubsamples} object is specified in \code{dssamps}. NB: different from \code{numit} parameter, which is specific to the fitting process.
+  number of resamples used to calculate the rarefaction data. This parameter is not used if list of \emph{DivSubsamples} object is specified in \code{dssamps}. NB: different from \code{numit} parameter, which is specific to the fitting process.
 }
   \item{minplaus}{
   lower x-axis bound for plausibility check.

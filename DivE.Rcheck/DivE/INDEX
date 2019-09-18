@@ -4,13 +4,13 @@ CombDM                  CombDM
 Curvature               Curvature
 DivE-package            Diversity Estimator
 DivSampleNum            DivSampleNum
+DivSubsamples           DivSubsamples
 DiveMaster              DiveMaster
+FitSingleMod            FitSingleMod
 ModelSet                List of 58 candidate models to fit to data
 ParamRanges             List of 58 sets of upper and lower bounds for
                         models evaluated by DivE
 ParamSeeds              List of 58 matrices of model seeding
                         parameters.
-divsubsamples           divsubsamples
-fitsinglemod            fitsinglemod
 popdiversity            popdiversity
 scoresinglemod          scoresinglemod

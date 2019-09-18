@@ -14,7 +14,7 @@ Curvature(dss)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dss}{
-  list of objects of class \emph{divsubsamples}.
+  list of objects of class \emph{DivSubsamples}.
 }
 }
 \details{
@@ -35,10 +35,10 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 
 
 \seealso{
-\code{\link[DivE]{divsubsamples}}
+\code{\link[DivE]{DivSubsamples}}
 }
 \examples{
-# See divsubsamples documentation for examples.
+# See DivSubsamples documentation for examples.
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
