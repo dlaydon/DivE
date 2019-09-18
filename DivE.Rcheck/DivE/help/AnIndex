@@ -1,11 +1,11 @@
 DivE-package	DivE-package
 Bact1	Bact1
 Bact2	Bact1
-CombDM	comb.dm
+CombDM	CombDM
 Curvature	Curvature
 DivE	DivE-package
 DiveMaster	DiveMaster
-divsamplenum	divsamplenum
+DivSampleNum	DivSampleNum
 divsubsamples	divsubsamples
 fitsinglemod	fitsinglemod
 ModelSet	ModelSet

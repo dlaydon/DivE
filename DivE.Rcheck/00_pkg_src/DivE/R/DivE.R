@@ -56,7 +56,7 @@ GenSubsampLengths <- function(main.samp, num.subsamp) {
 }
 
 ############### A2b. Generate subsample lengths function #################
-divsamplenum <- function(ms, n=6) { 
+DivSampleNum <- function(ms, n=6) { 
   if ((length(n)==1) && (n<2)) { 
 		  stop('Number of nested subsamples (subsizes) must be 2 or greater')
   }
@@ -538,14 +538,14 @@ FitAllSubs <- function(SS, model.list, init.param, param.range, dSS, numit, varl
 
 
 ####### B3a. Fit single model function #######
-fitsinglemod <- function(model.list, init.param, param.range, main.samp, tot.pop=(100*(divsamplenum(main.samp,2)[1])),
+fitsinglemod <- function(model.list, init.param, param.range, main.samp, tot.pop=(100*(DivSampleNum(main.samp,2)[1])),
 		numit=10^5, varleft=1e-8, data.default=TRUE, subsizes=6, dssamps=list(),
 		nrf=1, minrarefac=1, NResamples=1000, minplaus=10, fitloops=2) { 
   
   v1 <- FormatInput(main.samp) # Convert samp to a vector of length=main sample length and with species ids
   if (data.default) {
     cat("Creating subsamples and rarefaction data", "\n")
-    SS <- divsamplenum(main.samp, subsizes)
+    SS <- DivSampleNum(main.samp, subsizes)
     
     # Create divsubsample object for each sample
     samp <- v1
@@ -871,7 +871,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
   if (length(dssamps)==0) {
     cat("Creating subsamples and rarefaction data", "\n")
     mas.dss <- list() # Create 3 master samples
-    mas.SS <- divsamplenum(main.samp, subsizes) # Create master vector of 3 samples sizes
+    mas.SS <- DivSampleNum(main.samp, subsizes) # Create master vector of 3 samples sizes
     samp <- FormatInput(main.samp) # Format main sample
     
     dss.main <- divsubsamples(mainsamp=samp, nrf=nrf, minrarefac=minrarefac, maxrarefac=mas.SS[1], NResamples=NResamples)
@@ -884,7 +884,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
     }
   } else {
     cat("Loading predefined subsamples", "\n")
-    mas.SS <- divsamplenum(main.samp, subsizes)
+    mas.SS <- DivSampleNum(main.samp, subsizes)
     samp <- FormatInput(main.samp) # Format main sample
 
     mas.dss <- dssamps
@@ -945,7 +945,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
 
 
 ####### C5a. Fit/score multiple models function #######
-DiveMaster <- function(models, init.params, param.ranges, main.samp, tot.pop=(100*(divsamplenum(main.samp,2)[1])), numit=10^5, varleft=1e-8,
+DiveMaster <- function(models, init.params, param.ranges, main.samp, tot.pop=(100*(DivSampleNum(main.samp,2)[1])), numit=10^5, varleft=1e-8,
                               subsizes=6, dssamps=list(), nrf=1, minrarefac=1, NResamples=1000, minplaus=10, 
                               precision.lv=c(0.0001, 0.005, 0.005), plaus.pen=500,
                               crit.wts=c(1.0, 1.0, 1.0, 1.0), fitloops=2, numpred=5) {

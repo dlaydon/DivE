@@ -1,14 +1,14 @@
-\name{divsamplenum}
-\alias{divsamplenum}
+\name{DivSampleNum}
+\alias{DivSampleNum}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-divsamplenum
+DivSampleNum
 }
 \description{
 Function to generate an integer sequence representing the lengths of nested samples of sample
 }
 \usage{
-divsamplenum(ms, n)
+DivSampleNum(ms, n)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -43,8 +43,8 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 require(DivE)
 data(Bact1)
 
-divsamplenum(Bact1, 3)
-divsamplenum(Bact1, 6)
+DivSampleNum(Bact1, 3)
+DivSampleNum(Bact1, 6)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

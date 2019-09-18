@@ -12,7 +12,7 @@ Implements the DivE diversity estimator.
 }
 \usage{
 DiveMaster(models, init.params, param.ranges, main.samp,
-           tot.pop=(100*(divsamplenum(main.samp,2)[1])), numit=10^5,
+           tot.pop=(100*(DivSampleNum(main.samp,2)[1])), numit=10^5,
            varleft=1e-8, subsizes=6, dssamps=list(), nrf=1, minrarefac=1,
            NResamples=1000, minplaus=10,
            precision.lv=c(0.0001, 0.005, 0.005), plaus.pen=500,
@@ -43,7 +43,7 @@ DiveMaster(models, init.params, param.ranges, main.samp,
   control argument passed to optimisation routine; see \code{\link[FME]{modFit}} for details.
 }
   \item{subsizes}{
-  either number of nested subsamples (integer, must be 2 or greater), or a vector of nested sample lengths. If the former, then the vector of sample lengths will be created using the \emph{divsamplenum} function.
+  either number of nested subsamples (integer, must be 2 or greater), or a vector of nested sample lengths. If the former, then the vector of sample lengths will be created using the \emph{DivSampleNum} function.
 }
   \item{dssamps}{
   list of user specified rarefaction data \emph{divsubsamples} objects. The length of each component vector of each object in the list must correspond to the vector of nested sample lengths (as defined by the user in \code{subsizes}).

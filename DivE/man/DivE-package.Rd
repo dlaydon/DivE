@@ -86,7 +86,7 @@ Version: \tab 1.1\cr
 Date: \tab 2019-08-17\cr
 License: \tab GPL (>= 2) \cr
 }
-The main function is DiveMaster, which combines the four functions divsamplenum, divsubsamples, fitsinglemod, and scoresinglemod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
+The main function is DiveMaster, which combines the four functions DivSampleNum, divsubsamples, fitsinglemod, and scoresinglemod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
 }
 \author{
 Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith

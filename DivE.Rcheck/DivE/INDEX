@@ -3,13 +3,13 @@ Bact1                   Count of Medically Important Bacteria Species
 CombDM                  CombDM
 Curvature               Curvature
 DivE-package            Diversity Estimator
+DivSampleNum            DivSampleNum
 DiveMaster              DiveMaster
 ModelSet                List of 58 candidate models to fit to data
 ParamRanges             List of 58 sets of upper and lower bounds for
                         models evaluated by DivE
 ParamSeeds              List of 58 matrices of model seeding
                         parameters.
-divsamplenum            divsamplenum
 divsubsamples           divsubsamples
 fitsinglemod            fitsinglemod
 popdiversity            popdiversity

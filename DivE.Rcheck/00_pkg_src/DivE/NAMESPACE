@@ -2,7 +2,7 @@
 export(CombDM)
 export(Curvature)
 export(DiveMaster)
-export(divsamplenum)
+export(DivSampleNum)
 export(divsubsamples)
 export(fitsinglemod)
 export(popdiversity)

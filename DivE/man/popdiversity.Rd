@@ -24,7 +24,7 @@ popdiversity(dm, popsize, TopX=NULL)
 }
 }
 \details{
-\emph{comb.dm} combines multiple objects of class \emph{DiveMaster}. Function used if \emph{DivE} estimation has been split into multiple, separate calls to \code{DiveMaster}.
+\emph{CombDM} combines multiple objects of class \emph{DiveMaster}. Function used if \emph{DivE} estimation has been split into multiple, separate calls to \code{DiveMaster}.
 
 
 }
