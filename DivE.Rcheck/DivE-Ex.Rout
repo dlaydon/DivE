@@ -522,7 +522,7 @@ Single model scoring setup summary:
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.38 0.5 7.16 NA NA 
+Time elapsed:  7.54 0.6 8.48 NA NA 
 > grDevices::dev.off()
 null device 
           1 
