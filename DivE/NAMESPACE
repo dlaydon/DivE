@@ -1,5 +1,5 @@
 #exportPattern("^[[:alpha:]]+")
-export(comb.dm)
+export(CombDM)
 export(Curvature)
 export(DiveMaster)
 export(divsamplenum)

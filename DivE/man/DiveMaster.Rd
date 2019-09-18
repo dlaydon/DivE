@@ -78,7 +78,7 @@ DiveMaster(models, init.params, param.ranges, main.samp,
 \details{
 This is the master function of the DivE estimator. The default operation is a combination of four steps. 1. Generate a list of nested samples lengths from the main sample. 2. For each nested subsample, generate a vector of rarefaction data and their associated mean species diversity. 3. Fit to the generated data a set of models. 4. Evaluate the fits according to the DivE diversity estimation methodology and compare the scores across models and fitting criteria.
 
-A list of DiveMaster objects, each representing the fits to different sets of models, can combined into a single DiveMaster object using the \code{comb.dm} function. This is useful when running the DivE estimator with the full set of 58 models in a single run is not possible.
+A list of DiveMaster objects, each representing the fits to different sets of models, can combined into a single DiveMaster object using the \code{CombDM} function. This is useful when running the DivE estimator with the full set of 58 models in a single run is not possible.
 
 One can estimate the diversity for a given population using the \code{popdiversity} function where the arguments are the Divemaster object and the population size respectively.
 }
@@ -150,7 +150,7 @@ out$ssm
 summary(out)
 
 ## Combining two DiveMaster objects (assuming a second object 'out2'):
-# out3 <- comb.dm(list(out, out2))
+# out3 <- CombDM(list(out, out2))
 
 ## To calculate the diversity for a different population size
 # popdiversity(dm=out, popsize=10^5, TopX=1)

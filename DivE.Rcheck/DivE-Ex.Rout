@@ -212,7 +212,7 @@ Multiple Model fitting and scoring summary:
 1             98.38236             98.38236
 > 
 > ## Combining two DiveMaster objects (assuming a second object 'out2'):
-> # out3 <- comb.dm(list(out, out2))
+> # out3 <- CombDM(list(out, out2))
 > 
 > ## To calculate the diversity for a different population size
 > # popdiversity(dm=out, popsize=10^5, TopX=1)
@@ -290,9 +290,9 @@ Multiple Model fitting and scoring summary:
 > flush(stderr()); flush(stdout())
 > 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: comb.dm
-> ### Title: comb.dm
-> ### Aliases: comb.dm
+> ### Name: CombDM
+> ### Title: CombDM
+> ### Aliases: CombDM
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -522,7 +522,7 @@ Single model scoring setup summary:
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.3 0.6 7.13 NA NA 
+Time elapsed:  7.78 0.7 8.92 NA NA 
 > grDevices::dev.off()
 null device 
           1 

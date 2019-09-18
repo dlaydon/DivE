@@ -4,11 +4,11 @@ Title: Diversity Estimator
 Version: 1.1
 Date: 2019-09-18
 Author: Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
-Maintainer: Daniel J. Laydon <d.laydon@imperial.ac.uk>
+Maintainer: Daniel Laydon <d.laydon@imperial.ac.uk>
 Depends: deSolve, FME, rgeos, sp, R (>= 2.15.3)
-Description: Contains functions for the 'DivE' estimator (Laydon, D.J. et al., Quantification of HTLV-1 clonality and TCR diversity, PLOS Comput. Biol. 2014). The DivE estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
+Description: Contains functions for the 'DivE' estimator <https://doi.org/10.1371/journal.pcbi.1003646>. The 'DivE' estimator is a heuristic approach to estimate the number of classes or the number of species (species richness) in a population. 
 License: GPL (>= 2)
 LazyData: TRUE
 NeedsCompilation: no
-Packaged: 2019-09-18 12:02:27 UTC; dlaydon
-Built: R 3.6.1; ; 2019-09-18 12:02:46 UTC; windows
+Packaged: 2019-09-18 13:28:49 UTC; dlaydon
+Built: R 3.6.1; ; 2019-09-18 13:29:06 UTC; windows

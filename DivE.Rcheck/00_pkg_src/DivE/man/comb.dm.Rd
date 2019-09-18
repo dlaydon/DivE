@@ -1,14 +1,14 @@
-\name{comb.dm}
-\alias{comb.dm}
+\name{CombDM}
+\alias{CombDM}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-comb.dm
+CombDM
 }
 \description{
 Implements the DivE diversity estimator. Combines multiple objects of class \emph{DiveMaster}.
 }
 \usage{
-comb.dm(dmlist)
+CombDM(dmlist)
 }
 
 %- maybe also 'usage' for other objects documented here.
@@ -18,7 +18,7 @@ comb.dm(dmlist)
 }
 }
 \details{
-\emph{comb.dm} combines multiple objects of class \emph{DiveMaster}. Function used if \emph{DivE} estimation has been split into multiple, separate calls to \code{DiveMaster}.
+\emph{CombDM} combines multiple objects of class \emph{DiveMaster}. Function used if \emph{DivE} estimation has been split into multiple, separate calls to \code{DiveMaster}.
 
 
 }

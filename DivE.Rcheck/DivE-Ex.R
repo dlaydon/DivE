@@ -117,7 +117,7 @@ out$ssm
 summary(out)
 
 ## Combining two DiveMaster objects (assuming a second object 'out2'):
-# out3 <- comb.dm(list(out, out2))
+# out3 <- CombDM(list(out, out2))
 
 ## To calculate the diversity for a different population size
 # popdiversity(dm=out, popsize=10^5, TopX=1)
@@ -195,9 +195,9 @@ nameEx("comb.dm")
 flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: comb.dm
-### Title: comb.dm
-### Aliases: comb.dm
+### Name: CombDM
+### Title: CombDM
+### Aliases: CombDM
 ### Keywords: diversity
 
 ### ** Examples

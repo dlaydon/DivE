@@ -7,7 +7,7 @@
 * checking extension type ... Package
 * this is package 'DivE' version '1.1'
 * checking CRAN incoming feasibility ... NOTE
-Maintainer: 'Daniel J. Laydon <d.laydon@imperial.ac.uk>'
+Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
 
 New submission
 
@@ -16,6 +16,10 @@ Package was archived on CRAN
 CRAN repository db overrides:
   X-CRAN-Comment: Archived on 2018-06-17 as check problems were not
     corrected despite reminders.
+
+The Description field contains
+  <https://doi.org/10.1371/journal.pcbi.1003646>. The 'DivE' estimator is
+Please write DOIs as <doi:10.prefix/suffix>.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
