@@ -1,17 +1,17 @@
-\name{scoresinglemod}
-\alias{scoresinglemod}
-\alias{print.scoresingleMod}
-\alias{summary.scoresingleMod}
-\alias{print.summary.scoresingleMod}
+\name{ScoreSingleMod}
+\alias{ScoreSingleMod}
+\alias{print.ScoreSingleMod}
+\alias{summary.ScoreSingleMod}
+\alias{print.summary.ScoreSingleMod}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-scoresinglemod
+ScoreSingleMod
 }
 \description{
 Determines the set of scores corresponding to a single model fit to a diversity values of subsamples of a given sample and its nested samples.
 }
 \usage{
-scoresinglemod(fsm, precision.lv=c(0.0001, 0.005, 0.005), plaus.pen=500)
+ScoreSingleMod(fsm, precision.lv=c(0.0001, 0.005, 0.005), plaus.pen=500)
 }
 
 %- maybe also 'usage' for other objects documented here.
@@ -30,7 +30,7 @@ scoresinglemod(fsm, precision.lv=c(0.0001, 0.005, 0.005), plaus.pen=500)
 The score for a given model is only meaningful when compared with scores of other models. Lower score = better for predicting the population diversity. To assess the performance of a single model, it is more informative to use \code{\link[DivE]{FitSingleMod}} function.
 }
 \value{
-A list of class \emph{scoresingleMod} containing the scores of the fit of the model to the diversity samples. This includes the following:
+A list of class \emph{ScoreSingleMod} containing the scores of the fit of the model to the diversity samples. This includes the following:
 
   \item{discrepancy }{score for discrepancy, aggregated across all nested subsamples}
   \item{accuracy }{score for accuracy of full sample prediction, aggregated across all nested subsamples}
@@ -85,7 +85,7 @@ fsm <- FitSingleMod(model.list=testmodels, init.param=testmeta, param.range=para
 
 
 # Score the model
-ssm <- scoresinglemod(fsm)
+ssm <- ScoreSingleMod(fsm)
 
 ssm
 summary(ssm)

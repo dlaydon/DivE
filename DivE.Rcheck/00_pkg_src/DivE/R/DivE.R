@@ -576,12 +576,12 @@ FitSingleMod <- function(model.list, init.param, param.range, main.samp, tot.pop
     }
   }
   fitsingle$call <- match.call()
-  class(fitsingle) <- "fitsingleMod"
+  class(fitsingle) <- "FitSingleMod"
   fitsingle
 }
 
 ####### B3b. Print method -  fit of single model #######
-print.fitsingleMod <- function(x, ...) {
+print.FitSingleMod <- function(x, ...) {
   cat("Fitting results for model:", x$modelname, "\n")
   cat("Model parameters ($param):\n")
   print(x$param)
@@ -603,7 +603,7 @@ print.fitsingleMod <- function(x, ...) {
 }
 
 ####### B3c. Summary method: fit of single model #######
-summary.fitsingleMod <- function(object, ...) {
+summary.FitSingleMod <- function(object, ...) {
   tot.subsamp <- length(object$datapoints)
   num.rf <- length((object$datapoints[[1]])$RarefacXAxis)
   fitted.model <- object$modelname
@@ -615,12 +615,12 @@ summary.fitsingleMod <- function(object, ...) {
                No.of.model.parameters=n.param)
   fit.sum <- list(call=object$call,
                   rsum=TAB)
-  class(fit.sum) <- "summary.fitsingleMod"
+  class(fit.sum) <- "summary.FitSingleMod"
   fit.sum
 }
 
 ####### B3d. Print summary method -  fit of single model #######
-print.summary.fitsingleMod <- function(x, ...) {
+print.summary.FitSingleMod <- function(x, ...) {
   cat("Call:\n")
   print(x$call)
   cat("\nSingle model fit setup summary:\n")
@@ -628,7 +628,7 @@ print.summary.fitsingleMod <- function(x, ...) {
 }
 
 ####### B3e. Plot method -  fit of single model #######
-plot.fitsingleMod <- function(x, range="local", ...) {
+plot.FitSingleMod <- function(x, range="local", ...) {
   points.colours <- c("red", "green", "brown", "orange", "blue", "yellow")
   
   # Define plot limits
@@ -800,15 +800,15 @@ SingleModScore <- function(fsm, precision.lv = c(0.0001, 0.005, 0.005), plaus.pe
 
 
 ####### C3a. Score single model function #######
-scoresinglemod <- function(fsm, precision.lv = c(0.0001, 0.005, 0.005), plaus.pen=500) {
+ScoreSingleMod <- function(fsm, precision.lv = c(0.0001, 0.005, 0.005), plaus.pen=500) {
   scoresingle <- SingleModScore(fsm, precision.lv, plaus.pen)
   scoresingle$call <- match.call()
-  class(scoresingle) <- "scoresingleMod"
+  class(scoresingle) <- "ScoreSingleMod"
   scoresingle
 }
 
 ####### C3b. Print method -  score of single model #######
-print.scoresingleMod <- function(x, ...) {
+print.ScoreSingleMod <- function(x, ...) {
   cat("Scoring results ($[colnames]):\n")
   score.output <- matrix(c(x$fit, x$accuracy, x$similarity, x$plausibility), nrow=1, ncol=4)
   rownames(score.output) <- as.character(x$modname)
@@ -817,7 +817,7 @@ print.scoresingleMod <- function(x, ...) {
 }
 
 ####### C3c. Summary method: score of single model #######
-summary.scoresingleMod <- function(object, ...) {
+summary.ScoreSingleMod <- function(object, ...) {
   fitted.model <- object$modname
   binsize <- object$binsize
   plauspen <- object$plausibility.penalty
@@ -829,12 +829,12 @@ summary.scoresingleMod <- function(object, ...) {
                Plausibility.penalty=plauspen)
   score <- list(call=object$call,
               rsum=TAB)
-  class(score) <- "summary.scoresingleMod"
+  class(score) <- "summary.ScoreSingleMod"
   score
 }
 
 ####### C3d. Print summary method -  score of single model #######
-print.summary.scoresingleMod <- function(x, ...) {
+print.summary.ScoreSingleMod <- function(x, ...) {
   cat("Call:\n")
   print(x$call)
   cat("\nSingle model scoring setup summary:\n")
@@ -843,7 +843,7 @@ print.summary.scoresingleMod <- function(x, ...) {
 
 
 ####### C4a. Combine attributes of a single model #######
-# Input: scoresingleMod object, Criteria weights (zero=exclude from scoring)
+# Input: ScoreSingleMod object, Criteria weights (zero=exclude from scoring)
 # Output: Single model score
 CombineCriteria <- function(ssm, crit.wts=c(1.0, 1.0, 1.0, 1.0)) {
   vect <- c(ssm$fit, ssm$accuracy, ssm$similarity, ssm$plausibility)
@@ -902,7 +902,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
     
     # Score model criteria
     cat("Scoring model", i, "\n")
-    ssm.temp <- try(scoresinglemod(fsm=fsm.temp, precision.lv = precision.lv, plaus.pen=plaus.pen), silent=TRUE)
+    ssm.temp <- try(ScoreSingleMod(fsm=fsm.temp, precision.lv = precision.lv, plaus.pen=plaus.pen), silent=TRUE)
     if(class(ssm.temp) == "try-error") {next}  
     
     # Aggregate criteria score
@@ -1035,7 +1035,7 @@ CombDM <- function(dmlist) {
 ####### C7. Give a diversity estimate for a different population size based on top-x score models #######
 # Input: DiveMaster object, population size, Number of top scores models to include in estimate
 # Output: Single population estimate
-popdiversity = function (dm, popsize, TopX = NULL) {
+PopDiversity = function (dm, popsize, TopX = NULL) {
   if (is.null(TopX))	{	
     m <- dm$m	
   } else {

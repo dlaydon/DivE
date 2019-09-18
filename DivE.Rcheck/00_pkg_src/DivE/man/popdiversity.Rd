@@ -1,14 +1,14 @@
-\name{popdiversity}
-\alias{popdiversity}
+\name{PopDiversity}
+\alias{PopDiversity}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-popdiversity
+PopDiversity
 }
 \description{
 Calculates the species richness at a specified population size, taking an object of class \emph{DiveMaster} as an input.
 }
 \usage{
-popdiversity(dm, popsize, TopX=NULL)
+PopDiversity(dm, popsize, TopX=NULL)
 }
 
 %- maybe also 'usage' for other objects documented here.

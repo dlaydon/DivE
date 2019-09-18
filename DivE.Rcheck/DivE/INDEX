@@ -12,5 +12,5 @@ ParamRanges             List of 58 sets of upper and lower bounds for
                         models evaluated by DivE
 ParamSeeds              List of 58 matrices of model seeding
                         parameters.
-popdiversity            popdiversity
-scoresinglemod          scoresinglemod
+PopDiversity            PopDiversity
+ScoreSingleMod          ScoreSingleMod

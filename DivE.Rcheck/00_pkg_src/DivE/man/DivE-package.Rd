@@ -24,7 +24,7 @@ The package contains:
 
 6. {example candidate models, fitted parameters, parameter ranges, and an example data set}
 
-7. {an example script. We have attempted to make the code flexible to users who require varying levels of detail and control. The simplest way to use the package is the DiveMaster function. This function is a wrapper around other functions provided with the \emph{DivE} package and will create subsamples (function \code{DivSubsamples}), fit models (function \code{FitSingleMod}), score models (function \code{scoresinglemod}) and produce final diversity/species richness estimates (function \code{popdiversity}). }
+7. {an example script. We have attempted to make the code flexible to users who require varying levels of detail and control. The simplest way to use the package is the DiveMaster function. This function is a wrapper around other functions provided with the \emph{DivE} package and will create subsamples (function \code{DivSubsamples}), fit models (function \code{FitSingleMod}), score models (function \code{ScoreSingleMod}) and produce final diversity/species richness estimates (function \code{PopDiversity}). }
 
 The novel criteria against which each model fit is scored are:
 
@@ -86,7 +86,7 @@ Version: \tab 1.1\cr
 Date: \tab 2019-08-17\cr
 License: \tab GPL (>= 2) \cr
 }
-The main function is DiveMaster, which combines the four functions DivSampleNum, DivSubsamples, FitSingleMod, and scoresinglemod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
+The main function is DiveMaster, which combines the four functions DivSampleNum, DivSubsamples, FitSingleMod, and ScoreSingleMod. An example script using both DiveMaster and the four component functions can be found in the \emph{demo} folder in the source.
 }
 \author{
 Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith

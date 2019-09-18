@@ -1,9 +1,9 @@
 \name{FitSingleMod}
 \alias{FitSingleMod}
-\alias{print.fitsingleMod}
-\alias{summary.fitsingleMod}
-\alias{print.summary.fitsingleMod}
-\alias{plot.fitsingleMod}
+\alias{print.FitSingleMod}
+\alias{summary.FitSingleMod}
+\alias{print.summary.FitSingleMod}
+\alias{plot.FitSingleMod}
 
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
@@ -75,7 +75,7 @@ FitSingleMod(model.list, init.param, param.range,
 This function fits a single specified model to the diversity values of the subsamples of a set of nested samples. The output is a list of raw fitting results (pre-scoring). The user should use this function if he or she is interested in fitting a specific parametric rarefraction curve to a sample (rather than selecting the most appropriate model) and examining its performance.
 }
 \value{
-A list of class \emph{fitsingleMod} containing the results of the fit of the model to the diversity samples. This includes the following:
+A list of class \emph{FitSingleMod} containing the results of the fit of the model to the diversity samples. This includes the following:
 
   \item{param }{matrix of fitted parameters for each nested sample}
   \item{ssr }{sum-of-squared residuals for the fits for each nested sample}
@@ -111,10 +111,10 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 
 
 \seealso{
-\code{\link[DivE]{scoresinglemod}}
+\code{\link[DivE]{ScoreSingleMod}}
 }
 \examples{
-# See documentation of \code{scoresinglemod} for examples
+# See documentation of \code{ScoreSingleMod} for examples
 }
 
 \keyword{ diversity }

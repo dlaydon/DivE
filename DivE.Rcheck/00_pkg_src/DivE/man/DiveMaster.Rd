@@ -106,7 +106,7 @@ Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link[DivE]{FitSingleMod}}, \code{\link[DivE]{scoresinglemod}}
+\code{\link[DivE]{FitSingleMod}}, \code{\link[DivE]{ScoreSingleMod}}
 }
 \examples{
 require(DivE)

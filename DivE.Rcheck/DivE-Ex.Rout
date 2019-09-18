@@ -349,13 +349,13 @@ Multiple Model fitting and scoring summary:
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: FitSingleMod
 > ### Title: FitSingleMod
-> ### Aliases: FitSingleMod print.fitsingleMod summary.fitsingleMod
-> ###   print.summary.fitsingleMod plot.fitsingleMod
+> ### Aliases: FitSingleMod print.FitSingleMod summary.FitSingleMod
+> ###   print.summary.FitSingleMod plot.FitSingleMod
 > ### Keywords: diversity
 > 
 > ### ** Examples
 > 
-> # See documentation of \code{scoresinglemod} for examples
+> # See documentation of \code{ScoreSingleMod} for examples
 > 
 > 
 > 
@@ -423,15 +423,15 @@ Multiple Model fitting and scoring summary:
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 > base::cat("ParamSeeds", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
-> nameEx("popdiversity")
-> ### * popdiversity
+> nameEx("PopDiversity")
+> ### * PopDiversity
 > 
 > flush(stderr()); flush(stdout())
 > 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: popdiversity
-> ### Title: popdiversity
-> ### Aliases: popdiversity
+> ### Name: PopDiversity
+> ### Title: PopDiversity
+> ### Aliases: PopDiversity
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -441,18 +441,18 @@ Multiple Model fitting and scoring summary:
 > 
 > 
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("popdiversity", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> base::cat("PopDiversity", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
-> nameEx("scoresinglemod")
-> ### * scoresinglemod
+> nameEx("ScoreSingleMod")
+> ### * ScoreSingleMod
 > 
 > flush(stderr()); flush(stdout())
 > 
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-> ### Name: scoresinglemod
-> ### Title: scoresinglemod
-> ### Aliases: scoresinglemod print.scoresingleMod summary.scoresingleMod
-> ###   print.summary.scoresingleMod
+> ### Name: ScoreSingleMod
+> ### Title: ScoreSingleMod
+> ### Aliases: ScoreSingleMod print.ScoreSingleMod summary.ScoreSingleMod
+> ###   print.summary.ScoreSingleMod
 > ### Keywords: diversity
 > 
 > ### ** Examples
@@ -497,7 +497,7 @@ Performing local fit
 > 
 > 
 > # Score the model
-> ssm <- scoresinglemod(fsm)
+> ssm <- ScoreSingleMod(fsm)
 > 
 > ssm
 Scoring results ($[colnames]):
@@ -505,7 +505,7 @@ Scoring results ($[colnames]):
 logistic         217       53         36          500
 > summary(ssm)
 Call:
-scoresinglemod(fsm = fsm)
+ScoreSingleMod(fsm = fsm)
 
 Single model scoring setup summary:
      Model.name precision.fit precision.accuracy precision.similarity
@@ -516,13 +516,13 @@ Single model scoring setup summary:
 > 
 > 
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-> base::cat("scoresinglemod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> base::cat("ScoreSingleMod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.53 0.62 7.37 NA NA 
+Time elapsed:  6.72 0.64 7.53 NA NA 
 > grDevices::dev.off()
 null device 
           1 
