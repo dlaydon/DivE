@@ -38,7 +38,7 @@ FormatInput <- function(x, ...) {
   } else if ((is.data.frame(x) && dim(x)[2] == 1) || (is.matrix(x) && dim(x)[2] == 1)) {
     as.character(x[,1])
   } else {
-    print("Incorrect sample input format - reformat and try again")
+    stop("Incorrect sample input format - reformat and try again")
   }
 }
 
@@ -54,11 +54,8 @@ gen.subsamp.lengths <- function(main.samp, num.subsamp) {
   }
 }
 
-############### A2b. Generic generate subsample lengths function #################
-divsamplenum <- function(ms, n) {UseMethod("divsamplenum")}
-
 ############### A2c. Default generate subsample lengths function #################
-divsamplenum.default <- function(ms, n=6) { 
+divsamplenum <- function(ms, n=6) { 
   #if ((length(n)>1) && (n<2)) { 
   if ((length(n)==1) && (n<2)) { 
 		  stop('Number of nested subsamples (subsizes) must be 2 or greater')
@@ -109,10 +106,9 @@ gen.rarefac.div <- function(samp, num.rarefac, min.rarefac=1, B, max.rarefac=len
 }
 
 ############## A3d. Generic generate subsamples/diversity function ############
-divsubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) {UseMethod("divsubsamples")}
 
 ############# A3e. Default generate subsamples/diversity function #############
-divsubsamples.default <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
+divsubsamples <- function(mainsamp, nrf, minrarefac=1, maxrarefac=length(FormatInput(mainsamp)), NResamples=1000) { 
   samp <- FormatInput(mainsamp)
 
   xyvals <- gen.rarefac.div(samp=samp, num.rarefac=nrf, min.rarefac=minrarefac, B=NResamples, max.rarefac=maxrarefac)
@@ -147,6 +143,7 @@ summary.divsubsamples <- function(object, ...) {
   class(dss.sum) <- "summary.divsubsamples"
   dss.sum
 }
+
 
 ############ A3h. Print summary method -  subsample/diversity data ############
 print.summary.divsubsamples <- function(x, ...) {
