@@ -1,7 +1,6 @@
 pkgname <- "DivE"
 source(file.path(R.home("share"), "R", "examples-header.R"))
 options(warn = 1)
-options(pager = "console")
 base::assign(".ExTimings", "DivE-Ex.timings", pos = 'CheckExEnv')
 base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
 base::assign(".format_ptime",
@@ -17,7 +16,6 @@ pos = 'CheckExEnv')
 library('DivE')
 
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
-base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 cleanEx()
 nameEx("Bact1")
 ### * Bact1
@@ -368,7 +366,6 @@ base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos =
 base::cat("ScoreSingleMod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 ### * <FOOTER>
 ###
-cleanEx()
 options(digits = 7L)
 base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
 grDevices::dev.off()
