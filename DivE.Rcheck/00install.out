@@ -1,13 +1,18 @@
-* installing *source* package ‘DivE’ ...
-Warning in as.POSIXlt.POSIXct(x, tz) :
-  unknown timezone 'zone/tz/2019b.1.0/zoneinfo/Europe/London'
+* installing *source* package 'DivE' ...
+** using staged installation
 ** R
 ** data
 *** moving datasets to lazyload DB
 ** demo
-** preparing package for lazy loading
+** byte-compile and prepare package for lazy loading
 ** help
 *** installing help indices
 ** building package indices
-** testing if installed package can be loaded
+** testing if installed package can be loaded from temporary location
+*** arch - i386
+*** arch - x64
+** testing if installed package can be loaded from final location
+*** arch - i386
+*** arch - x64
+** testing if installed package keeps a record of temporary installation path
 * DONE (DivE)

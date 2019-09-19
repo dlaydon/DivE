@@ -1,7 +1,7 @@
 
-R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
-Copyright (C) 2016 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin13.4.0 (64-bit)
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -20,6 +20,7 @@ Type 'q()' to quit R.
 > pkgname <- "DivE"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
+> options(pager = "console")
 > base::assign(".ExTimings", "DivE-Ex.timings", pos = 'CheckExEnv')
 > base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
 > base::assign(".format_ptime",
@@ -38,14 +39,15 @@ Loading required package: FME
 Loading required package: rootSolve
 Loading required package: coda
 Loading required package: rgeos
-rgeos version: 0.3-22, (SVN revision 544)
- GEOS runtime version: 3.4.2-CAPI-1.8.2 r3921 
- Linking to sp version: 1.2-4 
+Loading required package: sp
+rgeos version: 0.5-1, (SVN revision 614)
+ GEOS runtime version: 3.6.1-CAPI-1.10.1 
+ Linking to sp version: 1.3-1 
  Polygon checking: TRUE 
 
-Loading required package: sp
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("Bact1")
 > ### * Bact1
@@ -167,16 +169,16 @@ RarefacXAxis:
 [39]  77  79  81  83  85  87  89  91  93  95  97  99 100
 
 RarefacYAxis (Mean diversity values):
- [1]  1.0  2.8  4.8  6.7  8.3 10.1 11.9 13.6 15.2 16.8 18.0 19.7 21.0 22.1 23.4
-[16] 24.9 26.0 27.0 28.0 29.3 30.4 31.1 32.4 33.4 34.2 35.6 37.0 37.9 38.4 39.4
-[31] 40.1 41.0 41.4 41.7 42.2 42.7 43.3 44.2 45.4 46.1 46.7 47.6 48.1 49.0 49.7
-[46] 50.2 50.6 51.0 51.3 51.8 52.3
+ [1]  1.0  3.0  4.8  6.6  8.6 10.5 11.7 13.4 15.1 16.4 17.9 19.6 21.1 21.9 23.2
+[16] 24.0 25.2 26.4 27.6 28.9 30.4 31.1 32.4 33.4 34.3 35.0 35.7 36.2 37.2 38.0
+[31] 38.8 39.4 40.3 41.4 42.1 43.0 43.7 44.4 45.2 45.8 46.9 47.4 48.0 49.3 49.9
+[46] 50.6 51.2 51.7 52.4 53.4 53.5
 > dss_2
 RarefacXAxis:
 [1]   1  21  41  61  81 100
 
 RarefacYAxis (Mean diversity values):
-[1]  1.0 17.4 31.2 40.1 47.2 54.0
+[1]  1.0 17.3 29.8 38.8 45.5 50.7
 > 
 > summary(dss_1)
 Call:
@@ -185,23 +187,23 @@ DivSubsamples(mainsamp = Bact1, nrf = 2, minrarefac = 1, maxrarefac = 100,
 
 Subsample data summary:
      Subsample.size Subsample.diversity No.of.rarefac.points Iterations
-[1,]            100                52.3                   51         10
+[1,]            100                53.5                   51         10
      Ave.StdErr
-[1,] 0.07730161
+[1,] 0.07540005
 > dss_1$div_sd
- [1] 0.0000000 0.4216370 0.4216370 0.4830459 0.4830459 0.3162278 0.5676462
- [8] 0.6992059 0.7888106 1.0327956 0.9428090 0.9486833 1.5634719 1.8529256
-[15] 2.2705848 2.2335821 2.3570226 2.7080128 2.6246693 2.5407785 2.6331224
-[22] 2.5144030 2.5905812 2.8362730 2.7406406 2.7968236 2.6246693 2.6853512
-[29] 2.7568098 2.8362730 2.9608557 3.2998316 3.2727834 2.9832868 3.2591751
-[36] 3.2335052 3.6224608 3.4253954 3.5962944 3.7252890 3.9735235 4.2216374
-[43] 4.2282121 4.2163702 4.0565448 4.1579910 4.3256342 4.5215533 4.4733780
-[50] 4.6856756 4.8773855
+ [1] 0.0000000 0.0000000 0.4216370 0.5163978 0.5163978 0.5270463 0.9486833
+ [8] 0.9660918 1.3703203 1.3498971 1.4491377 1.8973666 2.0248457 2.1317703
+[15] 2.2010099 1.8856181 2.2010099 2.0655911 1.8973666 2.0248457 2.3190036
+[22] 1.9692074 2.1186998 2.2705848 2.3593784 2.2607767 2.6687492 2.8205594
+[29] 2.8205594 3.2998316 3.2930904 3.4383459 3.5292429 3.9496835 3.7252890
+[36] 3.7118429 3.6832956 3.5023801 3.2249031 3.2249031 3.4464152 3.8355066
+[43] 3.7712362 3.7727090 3.9567102 3.8930137 3.6757463 3.8600518 3.8930137
+[50] 3.9777157 4.0892814
 > dss_1$NResamples
 [1] 10
 > 
 > Curvature(dss_1)
-[1] 0.2270554
+[1] 0.192729
 > 
 > 
 > 
@@ -267,39 +269,39 @@ Aggregating scoring for model 1
 > out
 Model score ($model.scores):
          Combined score
-logistic         179.75
+logistic          201.5
 
 Population diversity estimate ($estimate):
-[1] 116.0804
+[1] 98.38236
 > out$estimate
-[1] 116.0804
+[1] 98.38236
 > 
 > out$fmm$logistic
 Fitting results for model: logistic 
 Model parameters ($param):
-          a1          a2        a3
-65 0.9414199 0.008109146 1.0242919
-40 1.0810117 0.010499551 0.9838311
+          a1          a2       a3
+65 0.8652003 0.008793449 1.033428
+40 0.9015891 0.007722836 1.023604
 
 Subsample sizes ($subsamplesizes):
 [1] 65 40
 
 Measures for discrepancies between rarefaction data and model fits ($discrep, $ssr, $ms):
    Mean_absolute_error Sum_of_squares Mean_squared_residual
-65          0.01314714       2.495439            0.07561936
-40          0.01592935       1.059505            0.05045263
+65          0.02220715       3.731918            0.11308842
+40          0.02107675       1.554592            0.07402821
 
 Diversity predictions and the local prediction accuracy ($AccuracyToObserved, $local, $global):
    Accuracy_to_observed_dataset_diversity Predicted_local_diversity
-65                             -0.2038998                  114.6384
-40                             -0.2949486                  101.5274
+65                             -0.3240167                  97.34159
+40                             -0.2000115                 115.19834
    Predicted_global_diversity
-65                   116.0804
-40                   102.9423
+65                   98.38236
+40                  116.72923
 
 Similarity measure: normalised area between curve and largest-sample curve ($local.ref.dist):
    Distance_from_local_reference_curve
-40                           0.1141864
+40                           0.1759538
 
 Plausibility measures: monotonicity and decreasing 2nd derivative ($plausibility):
    Is plausible Monotonically increasing Slowing
@@ -308,12 +310,12 @@ Plausibility measures: monotonicity and decreasing 2nd derivative ($plausibility
 > 
 > out$fmm$logistic$global
    Predicted_global_diversity
-65                   116.0804
-40                   102.9423
+65                   98.38236
+40                  116.72923
 > 
 > out$ssm
          fit accuracy similarity plausibility
-logistic 146       50         23          500
+logistic 217       53         36          500
 > 
 > summary(out)
 Call:
@@ -323,9 +325,9 @@ DiveMaster(models = testmodels, init.params = testmeta, param.ranges = paramrang
 
 Multiple Model fitting and scoring summary:
   Number_of_models_fitted Best_scoring_model Estimated_global_diversity
-1                       1           logistic                   116.0804
+1                       1           logistic                   98.38236
   Diversity_upperbound Diversity_lowerbound
-1             116.0804             116.0804
+1             98.38236             98.38236
 > 
 > ## Combining two DiveMaster objects (assuming a second object 'out2'):
 > # out3 <- CombDM(list(out, out2))
@@ -500,7 +502,7 @@ Performing local fit
 > ssm
 Scoring results ($[colnames]):
          discrepancy accuracy similarity plausibility
-logistic         146       50         23          500
+logistic         217       53         36          500
 > summary(ssm)
 Call:
 ScoreSingleMod(fsm = fsm)
@@ -517,9 +519,10 @@ Single model scoring setup summary:
 > base::cat("ScoreSingleMod", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
+> cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.829 0.282 5.156 0 0 
+Time elapsed:  6.09 0.55 6.8 NA NA 
 > grDevices::dev.off()
 null device 
           1 
