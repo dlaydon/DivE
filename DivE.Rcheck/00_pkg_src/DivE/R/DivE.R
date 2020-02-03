@@ -2,8 +2,8 @@
 ###############################################################################
 # DivE - Diversity Estimator
 # Authors: Daniel Laydon, Aaron Sim, Charles Bangham, Becca Asquith
-# Date: 01 May 2014
-# Version: 1.00
+# Date: 03 Feb 2020
+# Version: 1.2
 # 
 # Contents:
 #   A. SUBSAMPLE AND RAREFACTION DATA GENERATION
@@ -178,7 +178,7 @@ DivSubsamples_Nested <- function(dss, maxsamp)
 # Inputs: divsubsample object
 Curvature <- function(dss) 
 {
-	if ((length(dss) > 1) && (class(dss[[1]])=="DivSubsamples")) 
+	if ((length(dss) > 1) && inherits(dss[[1]], "DivSubsamples")) 
 	{
 		SubSizes = c()
 		for (Sub in 1:length(dss)) 
@@ -330,13 +330,13 @@ Simm <- function(model, param1, param2, lowerlimit, upperlimit, tot.length)
 	intersections <- Crossings(model, param1, param2, seq(lowerlimit, upperlimit, length.out=tot.length))
 	
 	# No intersections
-	if (length(intersections) == 0  |  (class(intersections) == "try-error")) 
+	if (length(intersections) == 0  |  inherits(intersections, "try-error")) 
 	{
 		dist <- abs(as.numeric(as.character(integrate(SingleVar(model, param1), lower = lowerlimit, upper = upperlimit))[1])  -
 						as.numeric(as.character(integrate(SingleVar(model, param2), lower = lowerlimit, upper = upperlimit))[1]))
 		return(dist)
 		
-	} else if (length(intersections) != 0 & (class(intersections) != "try-error")) 
+	} else if (length(intersections) != 0 & !inherits(intersections, "try-error")) 
 	{
 		# with intersections
 		limits <- c(lowerlimit)
@@ -532,7 +532,7 @@ FitAllSubs <- function(SS, model.list, init.param, param.range, dSS, numit, varl
 								upperlimit=length(v1), tot.length=length(v1)-minsampsize+1), silent=TRUE)
 				global.tmp.mat <- try(Simm(model, param.mat[b,], param.mat[c,], lowerlimit=minsampsize,
 								upperlimit=tot.pop, tot.length=tot.pop-minsampsize+1), silent=TRUE)
-				if(inherits(local.tmp.mat, "try-error") & inherits(global.tmp.mat, "try-error")) 
+				if(!inherits(local.tmp.mat, "try-error") & !inherits(global.tmp.mat, "try-error")) 
 				{
 					sim.local.mat[b,c] <- local.tmp.mat
 					sim.global.mat[b,c] <- global.tmp.mat
@@ -543,7 +543,7 @@ FitAllSubs <- function(SS, model.list, init.param, param.range, dSS, numit, varl
 	sim.global.mat <- sim.global.mat + t(sim.global.mat)
 	sim.local.mat.tmp <- try(sim.local.mat/norm.fac.local, silent=TRUE)
 	sim.global.mat.tmp <- try(sim.global.mat/norm.fac.global, silent=TRUE)
-	if (inherits(sim.local.mat.tmp, "try-error") & inherits(sim.global.mat.tmp, "try-error")) 
+	if (!inherits(sim.local.mat.tmp, "try-error") & !inherits(sim.global.mat.tmp, "try-error")) 
 	{
 		sim.local.mat <- sim.local.mat.tmp
 		sim.global.mat <- sim.global.mat.tmp
@@ -962,7 +962,7 @@ MultipleScoring <- function(models, init.params, param.ranges, main.samp, tot.po
 		# Score model criteria
 		cat("Scoring model", i, "\n")
 		ssm.temp <- try(ScoreSingleMod(fsm=fsm.temp, precision.lv = precision.lv, plaus.pen=plaus.pen), silent=TRUE)
-		if(class(ssm.temp) == "try-error") {next}  
+		if(inherits(ssm.temp, "try-error")) next  
 		
 		# Aggregate criteria score
 		cat("Aggregating scoring for model", i, "\n")
