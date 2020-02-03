@@ -6,16 +6,14 @@
 * checking for file 'DivE/DESCRIPTION' ... OK
 * checking extension type ... Package
 * this is package 'DivE' version '1.1'
-* checking CRAN incoming feasibility ... NOTE
+* checking CRAN incoming feasibility ... WARNING
 Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
 
-New submission
+Insufficient package version (submitted: 1.1, existing: 1.1)
 
-Package was archived on CRAN
+The Date field is over a month old.
 
-CRAN repository db overrides:
-  X-CRAN-Comment: Archived on 2018-06-17 as check problems were not
-    corrected despite reminders.
+This build time stamp is over a month old.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -62,4 +60,4 @@ CRAN repository db overrides:
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 NOTE
+Status: 1 WARNING
