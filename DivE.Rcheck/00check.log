@@ -5,15 +5,9 @@
 * using option '--as-cran'
 * checking for file 'DivE/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'DivE' version '1.1'
-* checking CRAN incoming feasibility ... WARNING
+* this is package 'DivE' version '1.2'
+* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Daniel Laydon <d.laydon@imperial.ac.uk>'
-
-Insufficient package version (submitted: 1.1, existing: 1.1)
-
-The Date field is over a month old.
-
-This build time stamp is over a month old.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -60,4 +54,4 @@ This build time stamp is over a month old.
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 WARNING
+Status: OK
