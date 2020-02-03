@@ -269,7 +269,7 @@ Aggregating scoring for model 1
 > out
 Model score ($model.scores):
          Combined score
-logistic          201.5
+logistic         192.75
 
 Population diversity estimate ($estimate):
 [1] 98.38236
@@ -301,7 +301,7 @@ Diversity predictions and the local prediction accuracy ($AccuracyToObserved, $l
 
 Similarity measure: normalised area between curve and largest-sample curve ($local.ref.dist):
    Distance_from_local_reference_curve
-40                           0.1759538
+40                                   0
 
 Plausibility measures: monotonicity and decreasing 2nd derivative ($plausibility):
    Is plausible Monotonically increasing Slowing
@@ -315,7 +315,7 @@ Plausibility measures: monotonicity and decreasing 2nd derivative ($plausibility
 > 
 > out$ssm
          fit accuracy similarity plausibility
-logistic 217       53         36          500
+logistic 217       53          1          500
 > 
 > summary(out)
 Call:
@@ -502,7 +502,7 @@ Performing local fit
 > ssm
 Scoring results ($[colnames]):
          discrepancy accuracy similarity plausibility
-logistic         217       53         36          500
+logistic         217       53          1          500
 > summary(ssm)
 Call:
 ScoreSingleMod(fsm = fsm)
@@ -522,7 +522,7 @@ Single model scoring setup summary:
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.54 0.73 7.52 NA NA 
+Time elapsed:  6.19 0.61 6.99 NA NA 
 > grDevices::dev.off()
 null device 
           1 

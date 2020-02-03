@@ -10,5 +10,5 @@ Description: Contains functions for the 'DivE' estimator <doi:10.1371/journal.pc
 License: GPL (>= 2)
 LazyData: TRUE
 NeedsCompilation: no
-Packaged: 2020-02-03 12:57:34 UTC; dlaydon
-Built: R 3.6.1; ; 2020-02-03 14:46:52 UTC; windows
+Packaged: 2020-02-03 16:44:07 UTC; dlaydon
+Built: R 3.6.1; ; 2020-02-03 16:44:32 UTC; windows
