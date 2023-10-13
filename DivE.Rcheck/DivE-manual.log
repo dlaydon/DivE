@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.27)  13 OCT 2023 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.27)  13 OCT 2023 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/dlaydon/AppData/Local/Temp/RtmpmMtr1a/Rd2pdf76946c50571f/Rd2.tex
-(C:/Users/dlaydon/AppData/Local/Temp/RtmpmMtr1a/Rd2pdf76946c50571f/Rd2.tex
+**C:/Users/dlaydon/AppData/Local/Temp/Rtmpu8ol6A/Rd2pdf681c18a3136a/Rd2.tex
+(C:/Users/dlaydon/AppData/Local/Temp/Rtmpu8ol6A/Rd2pdf681c18a3136a/Rd2.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-07>
 (C:\Users\dlaydon\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -623,13 +623,7 @@ Overfull \hbox (5.66774pt too wide) in paragraph at lines 530--531
  the sam-ple []\T1/zi4/m/n/10 mainsamp[]\T1/ptm/m/n/10 . 
  []
 
-[12] [13] [14] [15]
-Overfull \hbox (3.68637pt too wide) in paragraph at lines 728--729
-[]\T1/ptm/m/n/10 Each model is writ-ten as a func-tion: func-tion(x, params) wi
-th(as.list(params), <\T1/ptm/m/it/10 func-tion of params\T1/ptm/m/n/10 >).
- []
-
-[16] [17] [18] [19]
+[12] [13] [14] [15] [16] [17] [18] [19]
 Overfull \hbox (3.75941pt too wide) in paragraph at lines 942--942
  []\T1/zi4/m/n/9 testmeta <- matrix(c(0.9451638, 0.007428265, 0.9938149, 1.0147
 441, 0.009543598, 0.9870419),[] 
@@ -684,7 +678,7 @@ fb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a
 8a.pfb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Users/dlaydon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on Rd2.pdf (22 pages, 218159 bytes).
+Output written on Rd2.pdf (22 pages, 217953 bytes).
 PDF statistics:
  452 PDF objects out of 1000 (max. 8388607)
  166 named destinations out of 1000 (max. 500000)

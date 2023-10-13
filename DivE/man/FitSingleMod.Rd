@@ -25,7 +25,7 @@ FitSingleMod(model.list, init.param, param.range,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{model.list}{
-  model; written as a function: function(x, params) { with(as.list(params), <\emph{function of params}>)}. Examples are given in the ModelSet data file as part of the DivE package. Used in the modFit function.
+  model; written as a function: function(x, params) with(as.list(params), FunctionOfParams). Examples are given in the ModelSet data file as part of the DivE package. Used in the modFit function.
 }
   \item{init.param}{
   matrix of of initial seed model parameters. For each matrix, each row represents a given parameter set; each column represents a parameter value. Column names must match parameter names (params) in the corresponding model in the list \code{models}. Examples are given in the ParamSeeds data file as part of the DivE package.
