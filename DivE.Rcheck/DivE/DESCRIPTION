@@ -1,8 +1,8 @@
 Package: DivE
 Type: Package
 Title: Diversity Estimator
-Version: 1.2
-Date: 2020-02-03
+Version: 1.3
+Date: 2023-10-13
 Author: Daniel J. Laydon, Aaron Sim, Charles R.M. Bangham, Becca Asquith
 Maintainer: Daniel Laydon <d.laydon@imperial.ac.uk>
 Depends: deSolve, FME, sp, R (>= 2.15.3)
@@ -10,5 +10,5 @@ Description: Contains functions for the 'DivE' estimator <doi:10.1371/journal.pc
 License: GPL (>= 2)
 LazyData: TRUE
 NeedsCompilation: no
-Packaged: 2023-10-13 11:39:23 UTC; dlaydon
-Built: R 4.2.1; ; 2023-10-13 11:42:16 UTC; windows
+Packaged: 2023-10-13 12:56:48 UTC; dlaydon
+Built: R 4.2.1; ; 2023-10-13 12:57:47 UTC; windows

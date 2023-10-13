@@ -12,19 +12,19 @@ R-package \emph{DivE} contains functions for the DivE estimator (Laydon, D.J. \e
 
 The package contains: 
 
-1. {functions to generate individual-based rarefaction (species-accumulation) data, and evaluate their curvature}
+1. functions to generate individual-based rarefaction (species-accumulation) data, and evaluate their curvature
 
-2. {functions to fit mathematical models to rarefaction data and nested subsamples thereof. These functions make extensive use of the R-package \emph{FME} (http://cran.r-project.org/web/packages/FME/index.html)}
+2. functions to fit mathematical models to rarefaction data and nested subsamples thereof. These functions make extensive use of the R-package \emph{FME} (http://cran.r-project.org/web/packages/FME/index.html)
 
-3. {functions to evaluate novel criteria for each model. These functions make use of the R-package \emph{rgeos} (http://cran.r-project.org/web/packages/rgeos/index.html) }
+3. functions to evaluate novel criteria for each model
 
-4. {functions to score competing models}
+4. functions to score competing models
 
-5. {a function to produce final estimates of the number of classes (diversity)}
+5. a function to produce final estimates of the number of classes (diversity)
 
-6. {example candidate models, fitted parameters, parameter ranges, and an example data set}
+6. example candidate models, fitted parameters, parameter ranges, and an example data set
 
-7. {an example script. We have attempted to make the code flexible to users who require varying levels of detail and control. The simplest way to use the package is the DiveMaster function. This function is a wrapper around other functions provided with the \emph{DivE} package and will create subsamples (function \code{DivSubsamples}), fit models (function \code{FitSingleMod}), score models (function \code{ScoreSingleMod}) and produce final diversity/species richness estimates (function \code{PopDiversity}). }
+7. an example script. We have attempted to make the code flexible to users who require varying levels of detail and control. The simplest way to use the package is the DiveMaster function. This function is a wrapper around other functions provided with the \emph{DivE} package and will create subsamples (function \code{DivSubsamples}), fit models (function \code{FitSingleMod}), score models (function \code{ScoreSingleMod}) and produce final diversity/species richness estimates (function \code{PopDiversity}). 
 
 The novel criteria against which each model fit is scored are:
 
