@@ -1,4 +1,7 @@
 Hmm ... looks like a package
+Converting parsed Rd's to LaTeX .
+Creating pdf output from LaTeX ...
+texify: security risk: running with elevated privileges
 Saving output to 'DivE-manual.pdf' ...
 Done
-You may want to clean up by 'rm -Rf C:/Users/dlaydon/AppData/Local/Temp/RtmpiCZq8e/Rd2pdf57dc5e8138bb'
+You may want to clean up by 'rm -Rf C:/Users/dlaydon/AppData/Local/Temp/RtmpmMtr1a/Rd2pdf76946c50571f'

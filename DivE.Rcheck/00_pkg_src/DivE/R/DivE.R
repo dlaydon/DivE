@@ -308,18 +308,19 @@ SingleVar <- function(funk, params)
 # Input: function, parameters1, parameter2, lower x-limit, upper x-limit
 Crossings <- function(model, param1, param2, xvals) 
 {
-	yvals1 <- model(xvals, param1)
-	yvals2 <- model(xvals, param2)
-	s1 <- try(SpatialLines(list(Lines(list(Line(cbind(xvals , yvals1 ))) , ID=1))), silent = TRUE)
-	s2 <- try(SpatialLines(list(Lines(list(Line(cbind(xvals , yvals2 ))) , ID=1))), silent = TRUE)
-	
-	temp.int <- gIntersection(s1, s2)
-	int.len <- length(temp.int)
-	
-	if (int.len != 0) 
-		row.names(temp.int) <- seq(1,int.len)
-	
-	intersections <- try(as.data.frame(temp.int), silent=TRUE)
+#	yvals1 <- model(xvals, param1)
+#	yvals2 <- model(xvals, param2)
+#	s1 <- try(SpatialLines(list(Lines(list(Line(cbind(xvals , yvals1))) , ID=1))), silent = TRUE)
+#	s2 <- try(SpatialLines(list(Lines(list(Line(cbind(xvals , yvals2))) , ID=1))), silent = TRUE)
+#	
+#	temp.int <- gIntersection(s1, s2)
+#	int.len <- length(temp.int)
+#	
+#	if (int.len != 0) 
+#		row.names(temp.int) <- seq(1,int.len)
+#	
+#	intersections <- try(as.data.frame(temp.int), silent=TRUE)
+	intersections <- NULL
 	intersections
 }
 
